@@ -1,7 +1,7 @@
 import { GET_MY_ORDERS } from "@/apollo/user/query";
 import UserOrderCard from "@/libs/components/order/UserOrderCard";
 import { OrderStatus } from "@/libs/enums/order.enum";
-import { Order, OrderInquery, OrderItem } from "@/libs/types/cart/order";
+import type { Order, OrderInquery, OrderItem } from "@/libs/types/cart/order";
 import { T } from "@/libs/types/common";
 import { useQuery } from "@apollo/client";
 import { List, ListItem, Stack } from "@mui/material";
