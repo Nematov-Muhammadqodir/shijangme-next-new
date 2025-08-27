@@ -5,7 +5,7 @@ import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
-import type { RootState } from "../../../store.ts";
+import type { RootState } from "../../../store";
 import { useSelector, useDispatch } from "react-redux";
 import { Product } from "@/libs/types/product/product.js";
 import { CartItem } from "@/libs/types/search";

@@ -94,9 +94,9 @@ const LeftNavbar = () => {
           </Button>
           <Button
             className={
-              currentPath === "/_admin/chat" ? "users-btn-active" : "users-btn"
+              currentPath === "/chat" ? "users-btn-active" : "users-btn"
             }
-            onClick={handleChat}
+            onClick={() => router.push("/chat")}
           >
             <MarkChatUnreadIcon className="icon" />
             <span className="text">Chat</span>

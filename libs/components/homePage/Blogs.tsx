@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { GET_BOARD_ARTICLES } from "@/apollo/user/query";
 import { useQuery } from "@apollo/client";
 import { BoardArticle } from "@/libs/types/board-article/board-article";
+import { T } from "@/libs/types/common";
 
 const Blogs = () => {
   const blogs = [1, 2, 3];

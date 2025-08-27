@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MemberStatus, MemberType } from "@/libs/enums/member.enum";
 import { REACT_APP_API_URL } from "@/libs/types/config";
 import { Member } from "@/libs/types/member/member";

@@ -1,8 +1,8 @@
 import { Box, Stack } from "@mui/material";
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import Order from "@/pages/order";
-import { OrderItem } from "@/libs/types/cart/order";
+
+import { Order, OrderItem } from "@/libs/types/cart/order";
 import { formatDate } from "@/libs/types/config";
 
 interface UserOrderCardProps {
