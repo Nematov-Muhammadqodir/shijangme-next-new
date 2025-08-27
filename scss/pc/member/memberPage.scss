@@ -1,0 +1,221 @@
+#pc-wrap {
+  #member-page {
+    background: #e8e9eb;
+    .container {
+      .member-page {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        gap: 25px;
+        // padding-top: 96px;
+        .back-frame {
+          width: 1260px;
+          height: auto;
+          display: flex;
+          flex-direction: row;
+          margin: 100px 0 200px 0;
+          border-radius: 12px;
+          background: #e8e9eb;
+          // box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
+          .left-config {
+            position: relative;
+            padding: 0 0 0 0;
+            width: 310px;
+            height: 700px;
+            border-radius: 0 25px 25px 0;
+            background: #280559;
+            box-shadow: 0px 1px 4px 0px rgba(24, 26, 32, 0.07);
+            margin: 0px 20px 40px 0px;
+            .profile {
+              margin-top: 5px;
+              position: relative;
+              display: flex;
+              flex-direction: row;
+              .profile-img {
+                img {
+                  width: 79px;
+                  height: 79px;
+                  border-radius: 50%;
+                  right: 30px;
+                  bottom: 12px;
+                  object-fit: cover;
+                }
+              }
+              .user-info {
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                .user-name {
+                  color: white;
+                  font-family: $font;
+                  font-size: 15px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                }
+                .user-phone {
+                  display: flex;
+                  flex-direction: row;
+                  margin-top: 5px;
+                  color: white;
+                }
+                .view-list {
+                  margin-top: 5px;
+                  font-weight: 600;
+                  color: white;
+                }
+              }
+            }
+            .follow-button-box {
+              height: 35px;
+              flex-direction: row;
+              gap: 10px;
+              align-items: center;
+              margin-top: 15px;
+              button {
+                border: 1px solid #b9b9b9;
+                color: #181a20;
+                font-family: $font;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+              }
+              p {
+                color: #b9b9b9;
+                font-family: $font;
+                font-size: 14px;
+                font-style: italic;
+                font-weight: 400;
+                line-height: normal;
+              }
+            }
+            .sections {
+              height: auto;
+              margin-top: 30px;
+              .section {
+                height: auto;
+                .title {
+                  color: #92929d;
+                  font-family: Poppins;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: normal;
+                  letter-spacing: 0.994px;
+                  text-transform: uppercase;
+                  margin-bottom: 10px;
+                }
+                .sub-section {
+                  width: 230px;
+                  height: 26px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  cursor: pointer;
+                  padding: 0 5px 0 5px;
+                  li {
+                    height: 33px;
+                    margin-bottom: 6px;
+                    border-radius: 4px;
+                  }
+                  .focus {
+                    height: 50px;
+                    background: white;
+                    border-radius: 15px;
+                    padding-left: 0px 10px;
+                    p {
+                      font-size: 14px;
+                      color: black;
+                    }
+                    .count-title {
+                      color: black;
+                    }
+                    .sub-title {
+                      color: black;
+                    }
+                    .white {
+                      color: white;
+                    }
+                  }
+                  .flex-box {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    .com-icon {
+                      display: flex;
+                      flex-direction: row;
+                      justify-content: flex-end;
+                      margin-left: 11px;
+                    }
+                    p {
+                      font-size: 14px;
+                      color: #ffffff;
+                    }
+                  }
+                  .flex-box-mine-follower {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: space-around;
+                    padding: 0px 10px;
+                    .groupOutlinedIcon {
+                      width: 30px;
+                    }
+                    .sub-title {
+                      padding-right: 90px;
+                    }
+                  }
+                }
+                img {
+                  width: 16px;
+                  height: 16px;
+                }
+                svg {
+                  width: 16px;
+                  height: 16px;
+                }
+                .sub-title {
+                  margin-left: 12px;
+                  color: #181a20;
+                  font-family: $font;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 55px;
+                }
+                .count-title {
+                  display: flex;
+                  justify-content: flex-end;
+                  padding-right: 10px;
+                  color: #181a20;
+                  font-family: $font;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 600;
+                  line-height: 55px;
+                }
+              }
+            }
+          }
+          .main-config {
+            position: relative;
+            width: 936px;
+            // margin-top: 52px;
+            align-items: center;
+            gap: 109px;
+            .list-config {
+              display: flex;
+              width: 100%;
+              height: auto;
+              flex-direction: row;
+              flex-wrap: wrap;
+              gap: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

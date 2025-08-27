@@ -1,0 +1,146 @@
+#pc-wrap {
+  .agents-list-main-container {
+    position: relative;
+    padding: 27px 0 75px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .container {
+      display: flex;
+      flex-direction: column;
+      .filter {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 40px;
+        .left {
+          display: flex;
+          flex-direction: row;
+          input {
+            padding: 22px 10px;
+            width: 333px;
+            height: 50px;
+            border-radius: 40px;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: #181a20;
+            font-family: $font;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 26px;
+            box-sizing: border-box;
+          }
+        }
+        .right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          button {
+            margin-left: 10px;
+            color: #181a20;
+            font-family: $font;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 26px;
+            &:hover {
+              background: none;
+            }
+          }
+        }
+      }
+      .card-wrap {
+        position: relative;
+        margin-top: 35px;
+        width: 100%;
+        min-height: 500px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-around;
+        .no-data {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          p {
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 3px;
+          }
+        }
+        .vendor-card-main {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          border: 1px solid rgba(0, 0, 0, 0.09);
+          margin-bottom: 20px;
+          .vendor-card {
+            display: flex;
+            flex-direction: column;
+            width: 354.797px;
+            height: 468.839px;
+            gap: 10px;
+            .vendor-img-container {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              img {
+                width: 354.797px;
+                height: 354.797px;
+                border-radius: 10px;
+              }
+              .vendor-product-count {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                padding: 10px 20px;
+                background-color: #627b5d;
+                color: white;
+                border-radius: 10px;
+              }
+            }
+            .vendor-info-container {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              gap: 15px;
+              .vendor-name {
+                font-weight: 600;
+                letter-spacing: 1px;
+                font-size: 20px;
+              }
+              .broker-of {
+                font-weight: 500;
+              }
+              .view-like-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 0px 20px;
+                width: 100%;
+                .like {
+                  color: red;
+                }
+                .view {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
