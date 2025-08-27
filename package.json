@@ -89,6 +89,7 @@
     "@types/assert": "^1.5.6",
     "@types/axios": "^0.14.0",
     "@types/js-cookie": "^3.0.2",
+    "@types/minimatch": "^6.0.0",
     "@types/node": "20.10.0",
     "@types/numeral": "^2.0.2",
     "@types/react": "18.2.0",

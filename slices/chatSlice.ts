@@ -29,6 +29,6 @@ const chatSlice = createSlice({
 
 export const { addUser, deleteAllUsers } = chatSlice.actions;
 
-export const usersValue = (state: RootState) => state.chat.users;
+// export const usersValue = (state: RootState) => state.chat.users;
 
 export default chatSlice.reducer;

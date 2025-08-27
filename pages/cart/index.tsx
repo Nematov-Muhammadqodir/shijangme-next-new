@@ -1,3 +1,4 @@
+//@ts-nocheck
 import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";

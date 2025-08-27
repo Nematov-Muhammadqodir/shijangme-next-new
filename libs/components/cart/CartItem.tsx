@@ -46,7 +46,7 @@ const CartItemCard = (props: CartItemProps) => {
     //@ts-ignore
     (Number(product?.productPrice) / 100) * product?.productDiscountRate;
 
-  const total = cartItem.quantity * discountPrice;
+  const total = (cartItem?.quantity ?? 0) * discountPrice;
   // APOLLO REQUESTS
   const [likeTargetProduct] = useMutation(LIKE_TARGET_PRODUCT);
 
@@ -104,7 +104,7 @@ const CartItemCard = (props: CartItemProps) => {
       <Box className="cart-item-left-config">
         <Box
           className="cart-image-container"
-          onClick={() => handleProductDetail(cartItem._id)}
+          onClick={() => handleProductDetail(cartItem._id ? cartItem._id : "")}
         >
           <img
             src={cartItem.image ? imagePath : "/img/products/pinapple.png"}
