@@ -17,6 +17,10 @@ interface VendorCardProps {
 const VendorCard = (props: VendorCardProps) => {
   const { vendor, likeMemberHandler } = props;
   const user = useReactiveVar(userVar);
+
+  const imagePath = vendor?.memberImage
+    ? `${REACT_APP_API_URL}/${vendor.memberImage}`
+    : "/img/profile/defaultImg.jpg";
   return (
     <div className="vendor-card-main">
       <div className="vendor-card">
@@ -27,7 +31,7 @@ const VendorCard = (props: VendorCardProps) => {
           }}
         >
           <Box className="vendor-img-container" component={"div"}>
-            <img src={`${REACT_APP_API_URL}/${vendor?.memberImage}`} alt="" />
+            <img src={imagePath} alt="" />
             <div className="vendor-product-count">
               {vendor.memberProducts} products
             </div>

@@ -187,12 +187,16 @@ const VendorDetail: NextPage = ({
       sweetMixinErrorAlert(error.message).then();
     }
   };
+
+  const imagePath = vendor?.memberImage
+    ? `${REACT_APP_API_URL}/${vendor.memberImage}`
+    : "/img/profile/defaultImg.jpg";
   return (
     <div style={{ marginTop: "30px" }} className="vendor-detail-main-container">
       <Stack className="container">
         <Stack className="vendor-info">
           <Box className="vendor-image">
-            <img src={`${REACT_APP_API_URL}/${vendor?.memberImage}`} alt="" />
+            <img src={imagePath} alt="" />
           </Box>
           <Stack
             className="vendor-details"
