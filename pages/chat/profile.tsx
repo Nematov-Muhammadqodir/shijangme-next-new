@@ -34,7 +34,7 @@ const ProfilePage = () => {
   };
 
   console.log("authUser", authUser);
-  const imagePath = `${"http://localhost:3002"}/${authUser?.profilePic}`;
+  const imagePath = `${"http://localhost:4008"}/${authUser?.profilePic}`;
 
   useEffect(() => {
     checkAuth();

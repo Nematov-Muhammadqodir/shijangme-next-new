@@ -57,7 +57,7 @@ const ChatSidebar = () => {
             >
               <img
                 src={
-                  `${"http://localhost:3002"}/${user?.profilePic}` ||
+                  `${"http://localhost:4008"}/${user?.profilePic}` ||
                   "/img/profile/defaultImg.jpg"
                 }
                 alt=""

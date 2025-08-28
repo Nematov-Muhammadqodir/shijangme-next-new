@@ -13,7 +13,7 @@ const MessageNavbar = () => {
       <div className="chosen">
         <img
           src={
-            `${"http://localhost:3002"}/${selectedUser?.profilePic}` ||
+            `${"http://localhost:4008"}/${selectedUser?.profilePic}` ||
             "/img/profile/defaultImg.jpg"
           }
           alt=""
