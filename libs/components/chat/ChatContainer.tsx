@@ -51,8 +51,8 @@ const ChatContainer = () => {
           <img
             src={
               message.senderId === authUser._id
-                ? `${"http://localhost:4008"}/${authUser?.profilePic}`
-                : `${"http://localhost:4008"}/${selectedUser?.profilePic}`
+                ? `${"http://72.60.41.172:4008"}/${authUser?.profilePic}`
+                : `${"http://72.60.41.172:4008"}/${selectedUser?.profilePic}`
             }
             alt=""
           />
@@ -62,7 +62,7 @@ const ChatContainer = () => {
               <div>
                 {message.image && (
                   <img
-                    src={`${"http://localhost:4008"}${message.image}`}
+                    src={`${"http://72.60.41.172:4008"}${message.image}`}
                     alt="Attachment"
                     className="attached-image"
                   />
