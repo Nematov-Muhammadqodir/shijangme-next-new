@@ -18,6 +18,7 @@ const ProfilePage = () => {
   const { authUser, isUpdatingProfile, updateProfile, checkAuth } =
     useAuthStore();
   const [selectedImg, setSelectedImg] = useState(null);
+  const router = useRouter();
 
   const handleImageUpload = async (e) => {
     const file = e.target.files?.[0];
@@ -39,6 +40,12 @@ const ProfilePage = () => {
   useEffect(() => {
     checkAuth();
   }, []);
+
+  useEffect(() => {
+    if (authUser === null) {
+      router.push("/chat/login");
+    }
+  }, [authUser, router]);
 
   return (
     <Box sx={{ minHeight: "100vh", pt: 8 }}>
