@@ -30,8 +30,6 @@ const ChatNavbar = () => {
 
   const backToChat = router.pathname === "/chat";
 
-  const isLoggedIn = user._id === "" ? false : true;
-
   return (
     <div className="chat-navbar-main-container">
       <div className="chat-navbar-container">
@@ -47,12 +45,10 @@ const ChatNavbar = () => {
             </Button>
           )}
 
-          {isLoggedIn && (
-            <Button variant="outlined" onClick={handleProfilePage}>
-              <AdminPanelSettingsIcon />
-              <span>Profile</span>
-            </Button>
-          )}
+          <Button variant="outlined" onClick={handleProfilePage}>
+            <AdminPanelSettingsIcon />
+            <span>Profile</span>
+          </Button>
 
           <Button onClick={logout}>
             <LogoutIcon />

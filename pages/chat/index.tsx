@@ -25,11 +25,11 @@ const ChatApp = () => {
     checkAuth();
   }, [checkAuth]);
 
-  useEffect(() => {
-    if (authUser === null) {
-      router.push("/chat/login");
-    }
-  }, [authUser, router]);
+  // useEffect(() => {
+  //   if (authUser === null) {
+  //     router.push("/chat/login");
+  //   }
+  // }, [authUser, router]);
 
   if (!authUser && isCheckingAuth) {
     return (
