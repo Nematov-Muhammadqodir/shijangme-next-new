@@ -3,18 +3,15 @@ import CallIcon from "@mui/icons-material/Call";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-// import HomeIcon from "@mui/icons-material/Home";
-// import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import GroupAddOutlinedIcon from "@mui/icons-material/GroupAddOutlined";
-import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
-import { Member } from "@/libs/types/member/member";
-import { GET_MEMBER } from "@/apollo/user/query";
+
 import { useQuery } from "@apollo/client";
-import { T } from "@/libs/types/common";
-import { REACT_APP_API_URL } from "@/libs/types/config";
-import { MemberType } from "@/libs/enums/member.enum";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import { Member } from "../../types/member/member";
+import { GET_MEMBER } from "../../../apollo/user/query";
+import ScrollFade from "../common/MotionWrapper";
+import { REACT_APP_API_URL } from "../../types/config";
+import { MemberType } from "../../enums/member.enum";
+import { T } from "../../types/common";
 
 interface MemberMenuProps {
   subscribeHandler: any;

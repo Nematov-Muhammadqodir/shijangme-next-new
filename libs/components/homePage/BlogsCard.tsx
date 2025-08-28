@@ -1,7 +1,7 @@
-import { BoardArticle } from "@/libs/types/board-article/board-article";
-import { formatDate, REACT_APP_API_URL } from "@/libs/types/config";
 import { Box, Stack } from "@mui/material";
 import React from "react";
+import { BoardArticle } from "../../types/board-article/board-article";
+import { formatDate, REACT_APP_API_URL } from "../../types/config";
 
 interface BlogCardProps {
   boardArticle: BoardArticle;

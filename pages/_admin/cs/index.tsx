@@ -1,18 +1,18 @@
-import { CREATE_NOTICE } from "@/apollo/admin/mutation";
-import withLayoutAdmin from "@/libs/components/layout/AdminLayout";
+import { useMutation } from "@apollo/client";
+import { Button, Stack, Typography } from "@mui/material";
+import React, { useCallback, useState } from "react";
+import { NoticeInput } from "../../../libs/types/cs/notice.input";
 import {
   NoticeCategory,
   NoticeFor,
   NoticeStatus,
-} from "@/libs/enums/notice.enum";
-import { NoticeInput } from "@/libs/types/cs/notice.input";
+} from "../../../libs/enums/notice.enum";
+import { CREATE_NOTICE } from "../../../apollo/admin/mutation";
 import {
   sweetErrorHandling,
   sweetMixinSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { useMutation } from "@apollo/client";
-import { Button, Stack, Typography } from "@mui/material";
-import React, { useCallback, useState } from "react";
+} from "../../../libs/types/sweetAlert";
+import withLayoutAdmin from "../../../libs/components/layout/AdminLayout";
 
 const CS = ({ initialValues, ...props }: any) => {
   const [insertNoticeData, setInsertNoticeData] =

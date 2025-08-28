@@ -1,12 +1,3 @@
-import { userVar } from "@/apollo/store";
-import Advertisement from "@/libs/components/homePage/Advertisement";
-import Banner from "@/libs/components/homePage/Banner";
-import Blogs from "@/libs/components/homePage/Blogs";
-import Category from "@/libs/components/homePage/Category";
-import DiscounProductsList from "@/libs/components/homePage/DiscounProductsList";
-import NewProductsList from "@/libs/components/homePage/NewProductsList";
-import TrendProductsList from "@/libs/components/homePage/TrendProductsList";
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { useReactiveVar } from "@apollo/client";
 import { Box, Stack } from "@mui/material";
 import { NextPage } from "next";
@@ -14,6 +5,15 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { userVar } from "../apollo/store";
+import Banner from "../libs/components/homePage/Banner";
+import DiscounProductsList from "../libs/components/homePage/DiscounProductsList";
+import { Category } from "@mui/icons-material";
+import NewProductsList from "../libs/components/homePage/NewProductsList";
+import TrendProductsList from "../libs/components/homePage/TrendProductsList";
+import Advertisement from "../libs/components/homePage/Advertisement";
+import withLayoutMain from "../libs/components/layout/LayoutHome";
+import Blogs from "../libs/components/homePage/Blogs";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {

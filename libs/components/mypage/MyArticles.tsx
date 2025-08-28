@@ -8,10 +8,11 @@ import { T } from "../../types/common";
 import { BoardArticle } from "../../types/board-article/board-article";
 import { GET_BOARD_ARTICLES } from "../../../apollo/user/query";
 import { LIKE_TARGET_BOARD_ARTICLE } from "../../../apollo/user/mutation";
-import { sweetErrorAlert } from "@/libs/types/sweetAlert";
-import { Messages } from "@/libs/types/config";
+
 import CommunityCard from "../common/CommunityCard";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import { Messages } from "../../types/config";
+import { sweetErrorAlert } from "../../types/sweetAlert";
+import ScrollFade from "../common/MotionWrapper";
 
 const MyArticles: NextPage = ({ initialInput, ...props }: T) => {
   const user = useReactiveVar(userVar);

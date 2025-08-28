@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import BlogsCard from "./BlogsCard";
 import { useRouter } from "next/router";
-import { GET_BOARD_ARTICLES } from "@/apollo/user/query";
 import { useQuery } from "@apollo/client";
-import { BoardArticle } from "@/libs/types/board-article/board-article";
-import { T } from "@/libs/types/common";
+import { GET_BOARD_ARTICLES } from "../../../apollo/user/query";
+import { BoardArticle } from "../../types/board-article/board-article";
+import { T } from "../../types/common";
 
 const Blogs = () => {
   const blogs = [1, 2, 3];

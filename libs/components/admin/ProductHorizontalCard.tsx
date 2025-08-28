@@ -1,11 +1,3 @@
-import { MemberStatus, MemberType } from "@/libs/enums/member.enum";
-import {
-  ProductCollection,
-  ProductFrom,
-  ProductStatus,
-} from "@/libs/enums/product.enum";
-import { Member } from "@/libs/types/member/member";
-import { Product } from "@/libs/types/product/product";
 import {
   Box,
   Button,
@@ -16,6 +8,8 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import { Product } from "../../types/product/product";
+import { ProductFrom, ProductStatus } from "../../enums/product.enum";
 
 interface MemberHorizontalCardProps {
   product: Product;

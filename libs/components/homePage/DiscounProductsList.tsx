@@ -2,23 +2,23 @@ import { Box, Stack, Pagination, Fade } from "@mui/material"; // Import Paginati
 import React, { useEffect, useState } from "react";
 import DiscountProductCart from "./DiscountProductCart";
 import { useMutation, useQuery } from "@apollo/client";
-import { GET_PRODUCTS } from "@/apollo/user/query";
-import { Product } from "@/libs/types/product/product";
-import { ProductsInquiry } from "@/libs/types/product/product.input";
-import { T } from "@/libs/types/common";
-import { LIKE_TARGET_PRODUCT } from "@/apollo/user/mutation";
-import { Message } from "@/libs/enums/common.enum";
+import { useSelector, useDispatch } from "react-redux";
+import { ProductsInquiry } from "../../types/product/product.input";
+import { Product } from "../../types/product/product";
+import {
+  resetWishListAmount,
+  wishListDecrement,
+  wishListIncrement,
+  wishListValue,
+} from "../../../slices/wishListSlice";
+import { LIKE_TARGET_PRODUCT } from "../../../apollo/user/mutation";
+import { GET_PRODUCTS } from "../../../apollo/user/query";
 import {
   sweetMixinErrorAlert,
   sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  wishListDecrement,
-  wishListIncrement,
-  resetWishListAmount,
-  wishListValue,
-} from "@/slices/wishListSlice";
+} from "../../types/sweetAlert";
+import { T } from "../../types/common";
+import { Message } from "../../enums/common.enum";
 
 interface DiscountProductsProps {
   initialInput: ProductsInquiry;

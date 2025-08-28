@@ -1,7 +1,6 @@
-// slices/cartSlice.ts
-import { CartItem } from "@/libs/types/search";
-import { RootState } from "@/store";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CartItem } from "../libs/types/search";
+import { RootState } from "../store";
 
 // Read from localStorage safely (only in browser)
 const storedCartJson =

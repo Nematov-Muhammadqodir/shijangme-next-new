@@ -1,7 +1,8 @@
 {
   "name": "shijangme-next",
-  "version": "0.1.0",
+  "version": "2.2.0",
   "private": true,
+  "license": "ITC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -89,7 +90,7 @@
     "@types/assert": "^1.5.6",
     "@types/axios": "^0.14.0",
     "@types/js-cookie": "^3.0.2",
-    "@types/minimatch": "^6.0.0",
+    "@types/minimatch": "^5.1.2",
     "@types/node": "20.10.0",
     "@types/numeral": "^2.0.2",
     "@types/react": "18.2.0",

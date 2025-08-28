@@ -10,12 +10,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import PortraitIcon from "@mui/icons-material/Portrait";
 import React from "react";
-import { sweetConfirmAlert } from "@/libs/types/sweetAlert";
+
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
-import { logOut } from "@/libs/auth";
-import { REACT_APP_API_URL } from "@/libs/types/config";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+
 import CallIcon from "@mui/icons-material/Call";
 import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
@@ -28,6 +25,11 @@ import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
+import { sweetConfirmAlert } from "../../types/sweetAlert";
+import { userVar } from "../../../apollo/store";
+import { logOut } from "../../auth";
+import { REACT_APP_API_URL } from "../../types/config";
+import ScrollFade from "../common/MotionWrapper";
 
 const MyMenu = () => {
   const router = useRouter();

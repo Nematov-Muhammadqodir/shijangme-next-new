@@ -1,7 +1,7 @@
-import { MemberStatus } from "@/libs/enums/member.enum";
-import { MembersInquiry } from "@/libs/types/member/member.input";
 import { List, ListItem } from "@mui/material";
 import React, { useState } from "react";
+import { MembersInquiry } from "../../types/member/member.input";
+import { MemberStatus } from "../../enums/member.enum";
 
 interface TopNavigationProps {
   type: string;

@@ -3,9 +3,9 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { Box, Stack } from "@mui/material";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import Notice from "@/libs/components/cs/Notice";
-import Faq from "@/libs/components/cs/Faq";
+import Notice from "../../libs/components/cs/Notice";
+import Faq from "../../libs/components/cs/Faq";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {

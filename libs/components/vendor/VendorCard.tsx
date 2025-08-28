@@ -4,10 +4,11 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import { Box } from "@mui/material";
 import Link from "next/link";
-import { Member } from "@/libs/types/member/member";
+
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
-import { REACT_APP_API_URL } from "@/libs/types/config";
+import { Member } from "../../types/member/member";
+import { REACT_APP_API_URL } from "../../types/config";
+import { userVar } from "../../../apollo/store";
 
 interface VendorCardProps {
   vendor: Member;

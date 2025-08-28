@@ -1,20 +1,20 @@
-import { userVar } from "@/apollo/store";
-import { CREATE_PRODUCT, UPDATE_PRODUCT } from "@/apollo/user/mutation";
-import { GET_PRODUCT } from "@/apollo/user/query";
-import { getJwtToken } from "@/libs/auth";
-import { ProductCollection, ProductVolume } from "@/libs/enums/product.enum";
-import { ProductInput } from "@/libs/types/product/product.input";
-import {
-  sweetErrorHandling,
-  sweetMixinErrorAlert,
-  sweetMixinSuccessAlert,
-} from "@/libs/types/sweetAlert";
 import { useMutation, useQuery, useReactiveVar } from "@apollo/client";
 import { Button, Stack, Typography } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import { getJwtToken } from "../../auth";
+import { ProductInput } from "../../types/product/product.input";
+import { ProductCollection, ProductVolume } from "../../enums/product.enum";
+import { userVar } from "../../../apollo/store";
+import { CREATE_PRODUCT, UPDATE_PRODUCT } from "../../../apollo/user/mutation";
+import { GET_PRODUCT } from "../../../apollo/user/query";
+import {
+  sweetErrorHandling,
+  sweetMixinErrorAlert,
+  sweetMixinSuccessAlert,
+} from "../../types/sweetAlert";
+import ScrollFade from "../common/MotionWrapper";
 
 const AddProduct = ({ initialValues, ...props }: any) => {
   const router = useRouter();

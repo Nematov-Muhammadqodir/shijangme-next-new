@@ -4,18 +4,18 @@ import { Pagination, Stack, Typography } from "@mui/material";
 import { T } from "../../types/common";
 import { useMutation, useQuery } from "@apollo/client";
 import { Message } from "../../enums/common.enum";
-import { Product } from "@/libs/types/product/product";
 import MyPageFavoriteCard from "./MyPageFavoriteCard";
-import { LIKE_TARGET_PRODUCT } from "@/apollo/user/mutation";
-import { GET_FAVORITES } from "@/apollo/user/query";
 import { useSelector, useDispatch } from "react-redux";
 import {
+  resetWishListAmount,
   wishListDecrement,
   wishListIncrement,
-  resetWishListAmount,
   wishListValue,
-} from "@/slices/wishListSlice";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+} from "../../../slices/wishListSlice";
+import { LIKE_TARGET_PRODUCT } from "../../../apollo/user/mutation";
+import { GET_FAVORITES } from "../../../apollo/user/query";
+import ScrollFade from "../common/MotionWrapper";
+import { Product } from "../../types/product/product";
 
 const MyFavorites: NextPage = () => {
   const [myFavorites, setMyFavorites] = useState<Product[]>([]);

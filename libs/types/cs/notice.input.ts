@@ -2,7 +2,7 @@ import {
   NoticeCategory,
   NoticeFor,
   NoticeStatus,
-} from "@/libs/enums/notice.enum";
+} from "../../enums/notice.enum";
 
 export interface NoticeInput {
   noticeCategory: NoticeCategory;

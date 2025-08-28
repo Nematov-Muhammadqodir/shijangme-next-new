@@ -4,12 +4,12 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { Product } from "@/libs/types/product/product";
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
-import { addItem } from "@/slices/cartSlice";
 import { useDispatch } from "react-redux";
-import { REACT_APP_API_URL } from "@/libs/types/config";
+import { Product } from "../../types/product/product";
+import { userVar } from "../../../apollo/store";
+import { REACT_APP_API_URL } from "../../types/config";
+import { addItem } from "../../../slices/cartSlice";
 
 interface TrendProductsCardProps {
   product: Product;

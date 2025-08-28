@@ -1,23 +1,23 @@
-import { ProductStatus } from "@/libs/enums/product.enum";
-import { Product } from "@/libs/types/product/product";
-import { VendorProductsInquery } from "@/libs/types/product/product.input";
 import { Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { MyPageProductCard } from "./MyPageProductCard";
 import { useMutation, useQuery, useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
-import { UPDATE_PRODUCT } from "@/apollo/user/mutation";
-import { GET_VENDOR_PRODUCTS } from "@/apollo/user/query";
-import { T } from "@/libs/types/common";
-import { sweetConfirmAlert, sweetErrorHandling } from "@/libs/types/sweetAlert";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import { VendorProductsInquery } from "../../types/product/product.input";
+import { Product } from "../../types/product/product";
+import { userVar } from "../../../apollo/store";
+import { UPDATE_PRODUCT } from "../../../apollo/user/mutation";
+import { GET_VENDOR_PRODUCTS } from "../../../apollo/user/query";
+import { T } from "../../types/common";
+import { ProductStatus } from "../../enums/product.enum";
+import { sweetConfirmAlert, sweetErrorHandling } from "../../types/sweetAlert";
+import ScrollFade from "../common/MotionWrapper";
 
 const MyProducts = ({ initialInput, ...props }: any) => {
   const [searchFilter, setSearchFilter] =
     useState<VendorProductsInquery>(initialInput);
   const [vendorProducts, setVendorProducts] = useState<Product[]>([]);
-  // const vendorProducts = [1, 2, 4];
+
   const user = useReactiveVar(userVar);
   const [total, setTotal] = useState<number>(0);
   const router = useRouter();

@@ -38,16 +38,17 @@ import {
 } from "../../apollo/user/mutation";
 import { GET_BOARD_ARTICLE, GET_COMMENTS } from "../../apollo/user/query";
 import { CommentUpdate } from "../../libs/types/comment/comment.update";
-import { Messages } from "@/libs/types/config";
+
+import DiamondOutlinedIcon from "@mui/icons-material/DiamondOutlined";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Messages } from "../../libs/types/config";
 import {
   sweetConfirmAlert,
   sweetMixinErrorAlert,
   sweetMixinSuccessAlert,
   sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import DiamondOutlinedIcon from "@mui/icons-material/DiamondOutlined";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+} from "../../libs/types/sweetAlert";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {

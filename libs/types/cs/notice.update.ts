@@ -1,4 +1,4 @@
-import { NoticeCategory, NoticeStatus } from "@/libs/enums/notice.enum";
+import { NoticeCategory, NoticeStatus } from "../../enums/notice.enum";
 
 export interface NoticeUpdate {
   _id: string;

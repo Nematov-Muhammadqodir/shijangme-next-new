@@ -11,18 +11,13 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import LanguageIcon from "@mui/icons-material/Language";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import { useMutation, useQuery, useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
 import { getJwtToken, logOut, updateStorage, updateUserInfo } from "../auth";
 import { Product } from "../types/product/product";
-import { GET_FAVORITES, GET_MEMBER } from "@/apollo/user/query";
 import { T } from "../types/common";
 import { useSelector } from "react-redux";
-import { wishListValue } from "@/slices/wishListSlice";
-import { cartItemsValue } from "@/slices/cartSlice";
 import { Messages, REACT_APP_API_URL } from "../types/config";
 import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
 import { Member } from "../types/member/member";
-import { UPDATE_MEMBER } from "@/apollo/user/mutation";
 import { MemberUpdate } from "../types/member/member.update";
 import {
   sweetErrorHandling,
@@ -30,6 +25,11 @@ import {
 } from "../types/sweetAlert";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
+import { userVar } from "../../apollo/store";
+import { wishListValue } from "../../slices/wishListSlice";
+import { cartItemsValue } from "../../slices/cartSlice";
+import { UPDATE_MEMBER } from "../../apollo/user/mutation";
+import { GET_FAVORITES, GET_MEMBER } from "../../apollo/user/query";
 
 const Navbar = ({ initialValues, ...props }: any) => {
   const user = useReactiveVar(userVar);

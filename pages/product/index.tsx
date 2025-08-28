@@ -1,6 +1,3 @@
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import Filter from "@/libs/components/product/Filter";
-import { ProductsInquiry } from "@/libs/types/product/product.input";
 import {
   Box,
   Button,
@@ -16,30 +13,31 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect, MouseEvent, useState, ChangeEvent } from "react";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
-import { Direction, Message } from "@/libs/enums/common.enum";
-import { T } from "@/libs/types/common";
-import ProductCard from "@/libs/components/product/ProductCard";
-import MultipleBanner from "@/libs/components/product/MultipleBanner";
-import OurBrands from "@/libs/components/OurBrands";
 import { useMutation, useQuery } from "@apollo/client";
-import { LIKE_TARGET_PRODUCT } from "@/apollo/user/mutation";
-import { GET_PRODUCTS } from "@/apollo/user/query";
-import { Product } from "@/libs/types/product/product";
-import {
-  sweetMixinErrorAlert,
-  sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { ProductFrom } from "@/libs/enums/product.enum";
 import { useDispatch, useSelector } from "react-redux";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { ProductsInquiry } from "../../libs/types/product/product.input";
 import {
   resetWishListAmount,
   wishListDecrement,
   wishListIncrement,
   wishListValue,
-} from "@/slices/wishListSlice";
-import ProductBanner from "@/libs/components/product/ProductBanner";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+} from "../../slices/wishListSlice";
+import { Product } from "../../libs/types/product/product";
+import { LIKE_TARGET_PRODUCT } from "../../apollo/user/mutation";
+import { GET_PRODUCTS } from "../../apollo/user/query";
+import { Direction, Message } from "../../libs/enums/common.enum";
+import {
+  sweetMixinErrorAlert,
+  sweetTopSmallSuccessAlert,
+} from "../../libs/types/sweetAlert";
+import ProductBanner from "../../libs/components/product/ProductBanner";
+import ScrollFade from "../../libs/components/common/MotionWrapper";
+import Filter from "../../libs/components/product/Filter";
+import ProductCard from "../../libs/components/product/ProductCard";
+import OurBrands from "../../libs/components/OurBrands";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
+import { T } from "../../libs/types/common";
 
 interface ProductsProps {
   initialInput: ProductsInquiry;

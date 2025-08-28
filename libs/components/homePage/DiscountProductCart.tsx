@@ -3,19 +3,12 @@ import React, { useState } from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { Product } from "@/libs/types/product/product";
-import { REACT_APP_API_URL } from "@/libs/types/config";
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  addItem,
-  removeItem,
-  deleteAll,
-  deleteItem,
-  cartItemsValue,
-} from "@/slices/cartSlice";
-
+import { Product } from "../../types/product/product";
+import { userVar } from "../../../apollo/store";
+import { REACT_APP_API_URL } from "../../types/config";
+import { addItem } from "../../../slices/cartSlice";
 interface DiscountProductCartProps {
   product: Product;
   likeProductHandler: any;

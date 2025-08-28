@@ -1,35 +1,45 @@
-import { userVar } from "@/apollo/store";
-import {
-  LIKE_TARGET_MEMBER,
-  SUBSCRIBE,
-  UNSUBSCRIBE,
-} from "@/apollo/user/mutation";
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import MemberFollowers from "@/libs/components/member/MemberFollowers";
-import MemberFollowings from "@/libs/components/member/MemberFollowings";
-import AddProduct from "@/libs/components/mypage/AddProduct";
-import MyArticles from "@/libs/components/mypage/MyArticles";
-import MyFavorites from "@/libs/components/mypage/MyFavorites";
-import MyMenu from "@/libs/components/mypage/MyMenu";
-import MyProducts from "@/libs/components/mypage/MyProducts";
-import MyProfile from "@/libs/components/mypage/MyProfile";
-import RecentlyVisited from "@/libs/components/mypage/RecentlyVisited";
-import WriteArticle from "@/libs/components/mypage/WriteArticle";
-import { Messages } from "@/libs/types/config";
-import {
-  sweetErrorHandling,
-  sweetMixinErrorAlert,
-  sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
 import { useMutation, useReactiveVar } from "@apollo/client";
 import { Stack } from "@mui/material";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
-import Order from "../order";
-import { MemberType } from "@/libs/enums/member.enum";
+import Orderr from "../order";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { userVar } from "../../apollo/store";
+import {
+  LIKE_TARGET_MEMBER,
+  SUBSCRIBE,
+  UNSUBSCRIBE,
+} from "../../apollo/user/mutation";
+import { Messages } from "../../libs/types/config";
+import {
+  sweetErrorHandling,
+  sweetMixinErrorAlert,
+  sweetTopSmallSuccessAlert,
+} from "../../libs/types/sweetAlert";
+import ScrollFade from "../../libs/components/common/MotionWrapper";
+import { MemberType } from "../../libs/enums/member.enum";
+import MyMenu from "../../libs/components/mypage/MyMenu";
+import AddProduct from "../../libs/components/mypage/AddProduct";
+import MyProducts from "../../libs/components/mypage/MyProducts";
+import MyFavorites from "../../libs/components/mypage/MyFavorites";
+import RecentlyVisited from "../../libs/components/mypage/RecentlyVisited";
+import MyArticles from "../../libs/components/mypage/MyArticles";
+import WriteArticle from "../../libs/components/mypage/WriteArticle";
+import MemberFollowers from "../../libs/components/member/MemberFollowers";
+import MemberFollowings from "../../libs/components/member/MemberFollowings";
+import MyProfile from "../../libs/components/mypage/MyProfile";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
+
+// import { useMutation, useReactiveVar } from "@apollo/client";
+// import { Stack } from "@mui/material";
+// import { NextPage } from "next";
+// import { useRouter } from "next/router";
+// import React, { useEffect } from "react";
+
+// import Order from "../order";
+
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
@@ -144,7 +154,7 @@ const MyPage: NextPage = () => {
                 {category === "myArticles" && <MyArticles />}
                 {category === "writeArticle" && <WriteArticle />}
                 {category === "myProfile" && <MyProfile />}
-                {category === "order" && <Order />}
+                {category === "order" && <Orderr />}
                 {category === "followers" && (
                   <MemberFollowers
                     subscribeHandler={subscribeHandler}

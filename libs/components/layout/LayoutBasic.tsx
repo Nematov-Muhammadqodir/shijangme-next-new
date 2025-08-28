@@ -4,7 +4,7 @@ import Top from "../Top";
 import Footer from "../Footer";
 import SmalTop from "./SmalTop";
 import { useEffect } from "react";
-import { getJwtToken, updateUserInfo } from "@/libs/auth";
+import { getJwtToken, updateUserInfo } from "../../auth";
 
 const withLayoutBasic = (Component: any) => {
   useEffect(() => {

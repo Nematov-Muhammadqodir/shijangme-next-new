@@ -1,6 +1,3 @@
-import { REACT_APP_API_URL, topProductRank } from "@/libs/types/config";
-import { Product } from "@/libs/types/product/product";
-import product from "@/pages/product";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
@@ -9,10 +6,12 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import { addItem } from "@/slices/cartSlice";
+import { Product } from "../../types/product/product";
+import { userVar } from "../../../apollo/store";
+import { REACT_APP_API_URL } from "../../types/config";
+import { addItem } from "../../../slices/cartSlice";
 
 interface MyPageFavoriteCard {
   product: Product;

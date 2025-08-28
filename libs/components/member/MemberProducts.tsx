@@ -1,14 +1,14 @@
 import { Pagination, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import MyProductsCard from "../common/MyProductsCard";
-import { ProductsInquiry } from "@/libs/types/product/product.input";
 import { NextPage } from "next";
-import { T } from "@/libs/types/common";
 import { useRouter } from "next/router";
-import { Product } from "@/libs/types/product/product";
-import { GET_PRODUCTS } from "@/apollo/user/query";
 import { useQuery } from "@apollo/client";
 import ScrollFade from "../common/MotionWrapper";
+import { GET_PRODUCTS } from "../../../apollo/user/query";
+import { ProductsInquiry } from "../../types/product/product.input";
+import { Product } from "../../types/product/product";
+import { T } from "../../types/common";
 
 const MemberProducts: NextPage = ({ initialInput, ...props }: any) => {
   const router = useRouter();

@@ -1,8 +1,3 @@
-import { GET_PRODUCT } from "@/apollo/user/query";
-import { OrderItem } from "@/libs/types/cart/order";
-import { T } from "@/libs/types/common";
-import { formatDate } from "@/libs/types/config";
-import { Product } from "@/libs/types/product/product";
 import { useQuery } from "@apollo/client";
 import {
   Box,
@@ -14,6 +9,10 @@ import {
   CircularProgress,
 } from "@mui/material";
 import React, { useState } from "react";
+import { Product } from "../../types/product/product";
+import { GET_PRODUCT } from "../../../apollo/user/query";
+import { formatDate } from "../../types/config";
+import { OrderItem } from "../../types/cart/order";
 
 interface OrderDetailCardProps {
   orderItem: OrderItem;

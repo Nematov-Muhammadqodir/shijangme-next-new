@@ -1,19 +1,3 @@
-import {
-  REMOVE_BOARD_ARTICLE_BY_ADMIN,
-  UPDATE_BOARD_ARTICLE_BY_ADMIN,
-} from "@/apollo/admin/mutation";
-import { GET_ALL_BOARD_ARTICLES_BY_ADMIN } from "@/apollo/admin/query";
-import withLayoutAdmin from "@/libs/components/layout/AdminLayout";
-import {
-  BoardArticleCategory,
-  BoardArticleStatus,
-} from "@/libs/enums/board-article.enum";
-import { BoardArticle } from "@/libs/types/board-article/board-article";
-import {
-  AllBoardArticlesInquiry,
-  BoardArticlesInquiry,
-} from "@/libs/types/board-article/board-article.input";
-import { T } from "@/libs/types/common";
 import { useMutation, useQuery } from "@apollo/client";
 import {
   InputAdornment,
@@ -26,9 +10,22 @@ import {
 } from "@mui/material";
 import React, { useCallback, useEffect, useState } from "react";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import CommunityHorizontalCard from "@/libs/components/admin/CommunityHorizontalCard";
-import { BoardArticleUpdate } from "@/libs/types/board-article/board-article.update";
-import { sweetErrorHandling } from "@/libs/types/sweetAlert";
+import { AllBoardArticlesInquiry } from "../../../libs/types/board-article/board-article.input";
+import { BoardArticle } from "../../../libs/types/board-article/board-article";
+import {
+  REMOVE_BOARD_ARTICLE_BY_ADMIN,
+  UPDATE_BOARD_ARTICLE_BY_ADMIN,
+} from "../../../apollo/admin/mutation";
+import { GET_ALL_BOARD_ARTICLES_BY_ADMIN } from "../../../apollo/admin/query";
+import {
+  BoardArticleCategory,
+  BoardArticleStatus,
+} from "../../../libs/enums/board-article.enum";
+import { BoardArticleUpdate } from "../../../libs/types/board-article/board-article.update";
+import { sweetErrorHandling } from "../../../libs/types/sweetAlert";
+import CommunityHorizontalCard from "../../../libs/components/admin/CommunityHorizontalCard";
+import withLayoutAdmin from "../../../libs/components/layout/AdminLayout";
+import { T } from "../../../libs/types/common";
 
 const Community = ({ initialInquiry, ...props }: any) => {
   const [anchorEl, setAnchorEl] = useState<any>([]);

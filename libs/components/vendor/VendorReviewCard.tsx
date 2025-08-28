@@ -1,9 +1,7 @@
-import { Box, Stack } from "@mui/material";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import { Comment } from "@/libs/types/comment/comment";
+import { Stack } from "@mui/material";
+import { Comment } from "../../types/comment/comment";
 import React from "react";
-import { formatDate } from "@/libs/types/config";
+import { formatDate } from "../../types/config";
 
 interface VendorReviewCardProps {
   vendorComment: Comment;
@@ -11,7 +9,6 @@ interface VendorReviewCardProps {
 
 const VendorReviewCard = (props: VendorReviewCardProps) => {
   const { vendorComment } = props;
-  const like = true;
   return (
     <div className="vendor-review-card-main">
       <Stack className="review-card-layout">

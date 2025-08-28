@@ -1,20 +1,22 @@
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Box, Button, Menu, MenuItem, Pagination, Stack } from "@mui/material";
 import { useRouter } from "next/router";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import React, { ChangeEvent, MouseEvent, useEffect, useState } from "react";
-import VendorCard from "@/libs/components/vendor/VendorCard";
-import { Member } from "@/libs/types/member/member";
-import { LIKE_TARGET_MEMBER } from "@/apollo/user/mutation";
+
 import { useMutation, useQuery } from "@apollo/client";
-import { GET_VENDORS } from "@/apollo/user/query";
-import { T } from "@/libs/types/common";
-import { Messages } from "@/libs/types/config";
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Member } from "../../libs/types/member/member";
+import { LIKE_TARGET_MEMBER } from "../../apollo/user/mutation";
+import { GET_VENDORS } from "../../apollo/user/query";
+import { T } from "../../libs/types/common";
+import { Messages } from "../../libs/types/config";
 import {
   sweetMixinErrorAlert,
   sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+} from "../../libs/types/sweetAlert";
+import VendorCard from "../../libs/components/vendor/VendorCard";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {

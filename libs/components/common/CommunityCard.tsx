@@ -8,8 +8,8 @@ import IconButton from "@mui/material/IconButton";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { userVar } from "@/apollo/store";
-import { REACT_APP_API_URL } from "@/libs/types/config";
+import { REACT_APP_API_URL } from "../../types/config";
+import { userVar } from "../../../apollo/store";
 
 interface CommunityCardProps {
   boardArticle: BoardArticle;

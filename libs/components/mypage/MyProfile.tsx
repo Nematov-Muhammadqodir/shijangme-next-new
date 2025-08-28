@@ -2,17 +2,18 @@ import React, { useCallback, useEffect, useState } from "react";
 import { NextPage } from "next";
 import { Button, Stack, Typography } from "@mui/material";
 import axios from "axios";
-import { Messages, REACT_APP_API_URL } from "@/libs/types/config";
+
 import { getJwtToken, updateStorage, updateUserInfo } from "../../auth";
 import { useMutation, useReactiveVar } from "@apollo/client";
 import { userVar } from "../../../apollo/store";
 import { MemberUpdate } from "../../types/member/member.update";
 import { UPDATE_MEMBER } from "../../../apollo/user/mutation";
+import { Messages, REACT_APP_API_URL } from "../../types/config";
 import {
   sweetErrorHandling,
   sweetMixinSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+} from "../../types/sweetAlert";
+import ScrollFade from "../common/MotionWrapper";
 
 const MyProfile: NextPage = ({ initialValues, ...props }: any) => {
   const token = getJwtToken();

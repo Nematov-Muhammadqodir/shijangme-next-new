@@ -1,4 +1,4 @@
-import { OrderStatus } from "@/libs/enums/order.enum";
+import { OrderStatus } from "../../enums/order.enum";
 import { Product, TotalCounter } from "../product/product";
 
 export interface OrderItemInput {

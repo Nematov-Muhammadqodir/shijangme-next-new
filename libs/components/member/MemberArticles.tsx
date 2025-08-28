@@ -1,22 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { NextPage } from "next";
 import { Pagination, Stack, Typography } from "@mui/material";
-
 import { useRouter } from "next/router";
 import CommunityCard from "../common/CommunityCard";
 import { T } from "../../types/common";
 import { BoardArticle } from "../../types/board-article/board-article";
 import { BoardArticlesInquiry } from "../../types/board-article/board-article.input";
 import { useMutation, useQuery } from "@apollo/client";
-
-import { Messages } from "@/libs/types/config";
+import { LIKE_TARGET_BOARD_ARTICLE } from "../../../apollo/user/mutation";
+import { GET_BOARD_ARTICLES } from "../../../apollo/user/query";
+import { Messages } from "../../types/config";
 import {
   sweetMixinErrorAlert,
   sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { LIKE_TARGET_BOARD_ARTICLE } from "@/apollo/user/mutation";
-import { GET_BOARD_ARTICLES } from "@/apollo/user/query";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+} from "../../types/sweetAlert";
+import ScrollFade from "../common/MotionWrapper";
 
 const MemberArticles: NextPage = ({ initialInput, ...props }: any) => {
   // const device = useDeviceDetect();

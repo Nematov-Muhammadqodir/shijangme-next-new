@@ -5,8 +5,8 @@ import ModeIcon from "@mui/icons-material/Mode";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Moment from "react-moment";
 import { useRouter } from "next/router";
-import { Product } from "@/libs/types/product/product";
-import { ProductStatus } from "@/libs/enums/product.enum";
+import { ProductStatus } from "../../enums/product.enum";
+import { Product } from "../../types/product/product";
 
 interface ProductCardProps {
   product: Product;

@@ -4,12 +4,12 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import FiberNewIcon from "@mui/icons-material/FiberNew";
 import AddIcon from "@mui/icons-material/Add";
-import { Product } from "@/libs/types/product/product";
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
-import { addItem } from "@/slices/cartSlice";
 import { useDispatch } from "react-redux";
-import { REACT_APP_API_URL } from "@/libs/types/config";
+import { Product } from "../../types/product/product";
+import { userVar } from "../../../apollo/store";
+import { REACT_APP_API_URL } from "../../types/config";
+import { addItem } from "../../../slices/cartSlice";
 
 interface NewProductCardProps {
   product: Product;

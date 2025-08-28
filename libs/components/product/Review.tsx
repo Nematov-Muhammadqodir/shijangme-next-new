@@ -1,11 +1,11 @@
-import { userVar } from "@/apollo/store";
 import { useReactiveVar } from "@apollo/client";
 import { Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React from "react";
 import Moment from "react-moment";
 import { Comment } from "../../types/comment/comment";
-import { REACT_APP_API_URL } from "@/libs/types/config";
+import { userVar } from "../../../apollo/store";
+import { REACT_APP_API_URL } from "../../types/config";
 
 interface ReviewProps {
   comment: Comment;

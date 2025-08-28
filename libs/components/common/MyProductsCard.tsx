@@ -1,13 +1,12 @@
-import { Product } from "@/libs/types/product/product";
 import { IconButton, Menu, MenuItem, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import Moment from "react-moment";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeIcon from "@mui/icons-material/Mode";
-import { formatMessageTime } from "@/libs/utils";
-import { ProductStatus } from "@/libs/enums/product.enum";
-import { REACT_APP_API_URL } from "@/libs/types/config";
+import { Product } from "../../types/product/product";
+import { REACT_APP_API_URL } from "../../types/config";
+import { ProductStatus } from "../../enums/product.enum";
 
 interface MyProductsCardProps {
   product: Product;

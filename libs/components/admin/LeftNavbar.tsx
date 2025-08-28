@@ -7,11 +7,11 @@ import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 import { useRouter } from "next/router";
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
-import { REACT_APP_API_URL } from "@/libs/types/config";
 import MarkChatUnreadIcon from "@mui/icons-material/MarkChatUnread";
-import { logOut } from "@/libs/auth";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
+import { userVar } from "../../../apollo/store";
+import { logOut } from "../../auth";
+import { REACT_APP_API_URL } from "../../types/config";
 
 const LeftNavbar = () => {
   const router = useRouter();

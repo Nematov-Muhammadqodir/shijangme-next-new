@@ -4,13 +4,13 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Product } from "@/libs/types/product/product";
 import { useReactiveVar } from "@apollo/client";
-import { userVar } from "@/apollo/store";
-import { REACT_APP_API_URL } from "@/libs/types/config";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import { addItem } from "@/slices/cartSlice";
+import { userVar } from "../../../apollo/store";
+import { REACT_APP_API_URL } from "../../types/config";
+import { Product } from "../../types/product/product";
+import { addItem } from "../../../slices/cartSlice";
 
 interface ProductCardProps {
   likeProductHandler: any;

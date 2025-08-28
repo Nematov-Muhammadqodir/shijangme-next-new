@@ -5,11 +5,11 @@ import { light } from "../scss/MaterialTheme";
 import { useState } from "react";
 import "../scss/app.scss";
 import "../scss/pc/main.scss";
-import { useApollo } from "@/apollo/client";
 import { ApolloProvider } from "@apollo/client";
 import { store } from "../store";
 import { Provider } from "react-redux";
 import { appWithTranslation } from "next-i18next";
+import { useApollo } from "../apollo/client";
 
 const App = ({ Component, pageProps }: AppProps) => {
   // @ts-ignore

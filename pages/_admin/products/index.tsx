@@ -1,6 +1,3 @@
-import withLayoutAdmin from "@/libs/components/layout/AdminLayout";
-import { ProductCollection, ProductStatus } from "@/libs/enums/product.enum";
-import { ProductsInquiry } from "@/libs/types/product/product.input";
 import {
   InputAdornment,
   List,
@@ -12,15 +9,21 @@ import {
 } from "@mui/material";
 import React, { useCallback, useEffect, useState } from "react";
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
-import MemberHorizontalCard from "@/libs/components/admin/MemberHorizontalCard";
-import { Product } from "@/libs/types/product/product";
+
 import { useMutation, useQuery } from "@apollo/client";
-import { UPDATE_PRODUCT_BY_ADMIN } from "@/apollo/admin/mutation";
-import { GET_ALL_PRODUCTS_BY_ADMIN } from "@/apollo/admin/query";
-import { T } from "@/libs/types/common";
-import ProductHorizontalCard from "@/libs/components/admin/ProductHorizontalCard";
-import { ProductUpdate } from "@/libs/types/product/product.update";
-import { sweetErrorHandling } from "@/libs/types/sweetAlert";
+import { Product } from "../../../libs/types/product/product";
+import { ProductsInquiry } from "../../../libs/types/product/product.input";
+import { UPDATE_PRODUCT_BY_ADMIN } from "../../../apollo/admin/mutation";
+import { GET_ALL_PRODUCTS_BY_ADMIN } from "../../../apollo/admin/query";
+import { T } from "../../../libs/types/common";
+import {
+  ProductCollection,
+  ProductStatus,
+} from "../../../libs/enums/product.enum";
+import { ProductUpdate } from "../../../libs/types/product/product.update";
+import { sweetErrorHandling } from "../../../libs/types/sweetAlert";
+import ProductHorizontalCard from "../../../libs/components/admin/ProductHorizontalCard";
+import withLayoutAdmin from "../../../libs/components/layout/AdminLayout";
 
 const Products = ({ initialInquiry, ...props }: any) => {
   const [anchorEl, setAnchorEl] = useState<[] | HTMLElement[]>([]);

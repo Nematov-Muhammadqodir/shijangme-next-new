@@ -1,13 +1,13 @@
-import { GET_MY_ORDERS } from "@/apollo/user/query";
-import UserOrderCard from "@/libs/components/order/UserOrderCard";
-import { OrderStatus } from "@/libs/enums/order.enum";
-import type { Order, OrderInquery, OrderItem } from "@/libs/types/cart/order";
-import { T } from "@/libs/types/common";
 import { useQuery } from "@apollo/client";
 import { List, ListItem, Stack } from "@mui/material";
 import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React, { useState } from "react";
+import { T } from "../../libs/types/common";
+import { Order, OrderInquery } from "../../libs/types/cart/order";
+import { GET_MY_ORDERS } from "../../apollo/user/query";
+import { OrderStatus } from "../../libs/enums/order.enum";
+import UserOrderCard from "../../libs/components/order/UserOrderCard";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {
@@ -15,7 +15,7 @@ export const getStaticProps = async ({ locale }: any) => ({
   },
 });
 
-const Order: NextPage = ({ initialInquiry, ...props }: any) => {
+const Orderr: NextPage = ({ initialInquiry, ...props }: any) => {
   const [ordersInquiry, setOrdersInquiry] =
     useState<OrderInquery>(initialInquiry);
   const [value, setValue] = useState(
@@ -119,7 +119,7 @@ const Order: NextPage = ({ initialInquiry, ...props }: any) => {
   );
 };
 
-Order.defaultProps = {
+Orderr.defaultProps = {
   initialInquiry: {
     page: 1,
     limit: 1000,
@@ -129,4 +129,4 @@ Order.defaultProps = {
   },
 };
 
-export default Order;
+export default Orderr;

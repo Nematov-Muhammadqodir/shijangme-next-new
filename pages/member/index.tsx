@@ -1,27 +1,27 @@
-import { userVar } from "@/apollo/store";
-import {
-  LIKE_TARGET_MEMBER,
-  SUBSCRIBE,
-  UNSUBSCRIBE,
-} from "@/apollo/user/mutation";
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import MemberArticles from "@/libs/components/member/MemberArticles";
-import MemberFollowers from "@/libs/components/member/MemberFollowers";
-import MemberFollowings from "@/libs/components/member/MemberFollowings";
-import MemberMenu from "@/libs/components/member/MemberMenu";
-import MemberProducts from "@/libs/components/member/MemberProducts";
-import { Messages } from "@/libs/types/config";
-import {
-  sweetErrorHandling,
-  sweetMixinErrorAlert,
-  sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
 import { useMutation, useReactiveVar } from "@apollo/client";
 import { Box, Container, Stack } from "@mui/material";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { userVar } from "../../apollo/store";
+import {
+  LIKE_TARGET_MEMBER,
+  SUBSCRIBE,
+  UNSUBSCRIBE,
+} from "../../apollo/user/mutation";
+import { Messages } from "../../libs/types/config";
+import {
+  sweetErrorHandling,
+  sweetMixinErrorAlert,
+  sweetTopSmallSuccessAlert,
+} from "../../libs/types/sweetAlert";
+import MemberMenu from "../../libs/components/member/MemberMenu";
+import MemberProducts from "../../libs/components/member/MemberProducts";
+import MemberFollowers from "../../libs/components/member/MemberFollowers";
+import MemberFollowings from "../../libs/components/member/MemberFollowings";
+import MemberArticles from "../../libs/components/member/MemberArticles";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {

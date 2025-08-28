@@ -4,11 +4,12 @@ import { Pagination, Stack, Typography } from "@mui/material";
 import { T } from "../../types/common";
 import { useMutation, useQuery } from "@apollo/client";
 import { Message } from "../../enums/common.enum";
-import { Product } from "@/libs/types/product/product";
+
 import MyPageFavoriteCard from "./MyPageFavoriteCard";
-import { LIKE_TARGET_PRODUCT } from "@/apollo/user/mutation";
-import { GET_VISITED } from "@/apollo/user/query";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import { Product } from "../../types/product/product";
+import { LIKE_TARGET_PRODUCT } from "../../../apollo/user/mutation";
+import { GET_VISITED } from "../../../apollo/user/query";
+import ScrollFade from "../common/MotionWrapper";
 
 const RecentlyVisited: NextPage = () => {
   const [recentlyVisited, setRecentlyVisited] = useState<Product[]>([]);

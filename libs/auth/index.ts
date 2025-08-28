@@ -1,9 +1,10 @@
 import decodeJWT from "jwt-decode";
-import { initializeApollo } from "@/apollo/client";
+
 import { sweetMixinErrorAlert } from "../types/sweetAlert";
 import { CustomJwtPayload } from "../types/customJwtPayload";
-import { userVar } from "@/apollo/store";
-import { LOGIN, SIGN_UP } from "@/apollo/user/mutation";
+import { initializeApollo } from "../../apollo/client";
+import { LOGIN, SIGN_UP } from "../../apollo/user/mutation";
+import { userVar } from "../../apollo/store";
 
 export function getJwtToken(): any {
   if (typeof window !== "undefined") {

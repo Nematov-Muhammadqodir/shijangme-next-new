@@ -1,17 +1,4 @@
 import {
-  BoardArticleCategory,
-  BoardArticleStatus,
-} from "@/libs/enums/board-article.enum";
-import { MemberStatus, MemberType } from "@/libs/enums/member.enum";
-import {
-  ProductCollection,
-  ProductFrom,
-  ProductStatus,
-} from "@/libs/enums/product.enum";
-import { BoardArticle } from "@/libs/types/board-article/board-article";
-import { Member } from "@/libs/types/member/member";
-import { Product } from "@/libs/types/product/product";
-import {
   Box,
   Button,
   Fade,
@@ -21,6 +8,11 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import {
+  BoardArticleCategory,
+  BoardArticleStatus,
+} from "../../enums/board-article.enum";
+import { BoardArticle } from "../../types/board-article/board-article";
 
 interface MemberHorizontalCardProps {
   article: BoardArticle;

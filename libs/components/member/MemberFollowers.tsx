@@ -1,16 +1,16 @@
-import { Follower } from "@/libs/types/follow/follow";
-import { FollowInquiry } from "@/libs/types/follow/follow.input";
 import { Box, Button, Pagination, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { GET_MEMBER_FOLLOWERS } from "@/apollo/user/query";
 import { useQuery, useReactiveVar } from "@apollo/client";
-import { T } from "@/libs/types/common";
-import { userVar } from "@/apollo/store";
-import { REACT_APP_API_URL } from "@/libs/types/config";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import { FollowInquiry } from "../../types/follow/follow.input";
+import { userVar } from "../../../apollo/store";
+import { Follower } from "../../types/follow/follow";
+import { GET_MEMBER_FOLLOWERS } from "../../../apollo/user/query";
+import { T } from "../../types/common";
+import ScrollFade from "../common/MotionWrapper";
+import { REACT_APP_API_URL } from "../../types/config";
 
 interface MemberFollowsProps {
   initialInput: FollowInquiry;

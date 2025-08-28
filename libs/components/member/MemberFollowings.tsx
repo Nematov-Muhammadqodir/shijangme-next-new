@@ -7,9 +7,9 @@ import { Following } from "../../types/follow/follow";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { T } from "../../types/common";
-import { GET_MEMBER_FOLLOWINGS } from "@/apollo/user/query";
-import { userVar } from "@/apollo/store";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import { userVar } from "../../../apollo/store";
+import { GET_MEMBER_FOLLOWINGS } from "../../../apollo/user/query";
+import ScrollFade from "../common/MotionWrapper";
 
 interface MemberFollowingsProps {
   initialInput: FollowInquiry;

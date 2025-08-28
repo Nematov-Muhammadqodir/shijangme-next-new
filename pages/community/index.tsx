@@ -9,11 +9,7 @@ import { T } from "../../libs/types/common";
 import { BoardArticlesInquiry } from "../../libs/types/board-article/board-article.input";
 import { BoardArticleCategory } from "../../libs/enums/board-article.enum";
 import { useMutation, useQuery } from "@apollo/client";
-// import { LIKE_TARGET_BOARD_ARTICLE } from "../../apollo/user/mutation";
-import {
-  sweetMixinErrorAlert,
-  sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
+
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export const getStaticProps = async ({ locale }: any) => ({
@@ -24,11 +20,15 @@ export const getStaticProps = async ({ locale }: any) => ({
 
 // import { GET_BOARD_ARTICLES } from "../../apollo/user/query";
 import { Message } from "../../libs/enums/common.enum";
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import DiamondOutlinedIcon from "@mui/icons-material/DiamondOutlined";
-import { GET_BOARD_ARTICLES } from "@/apollo/user/query";
-import { LIKE_TARGET_BOARD_ARTICLE } from "@/apollo/user/mutation";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import { LIKE_TARGET_BOARD_ARTICLE } from "../../apollo/user/mutation";
+import { GET_BOARD_ARTICLES } from "../../apollo/user/query";
+import {
+  sweetMixinErrorAlert,
+  sweetTopSmallSuccessAlert,
+} from "../../libs/types/sweetAlert";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 const Community: NextPage = ({ initialInput, ...props }: T) => {
   const router = useRouter();

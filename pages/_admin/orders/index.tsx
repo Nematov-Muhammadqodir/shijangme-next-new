@@ -1,15 +1,18 @@
-import { UPDATE_ORDER_BY_ADMIN } from "@/apollo/admin/mutation";
-import { GET_ALL_ORDERS_BY_ADMIN } from "@/apollo/admin/query";
-import { GET_MY_ORDERS } from "@/apollo/user/query";
-import AdminOrderCard from "@/libs/components/admin/AdminOrderCard";
-import withLayoutAdmin from "@/libs/components/layout/AdminLayout";
-import { OrderStatus } from "@/libs/enums/order.enum";
-import { Order, OrderInquery, OrderUpdateInput } from "@/libs/types/cart/order";
-import { T } from "@/libs/types/common";
-import { sweetErrorHandling } from "@/libs/types/sweetAlert";
 import { useMutation, useQuery } from "@apollo/client";
 import { List, ListItem, Stack } from "@mui/material";
 import React, { useState } from "react";
+import {
+  Order,
+  OrderInquery,
+  OrderUpdateInput,
+} from "../../../libs/types/cart/order";
+import { UPDATE_ORDER_BY_ADMIN } from "../../../apollo/admin/mutation";
+import { GET_ALL_ORDERS_BY_ADMIN } from "../../../apollo/admin/query";
+import { T } from "../../../libs/types/common";
+import { OrderStatus } from "../../../libs/enums/order.enum";
+import { sweetErrorHandling } from "../../../libs/types/sweetAlert";
+import AdminOrderCard from "../../../libs/components/admin/AdminOrderCard";
+import withLayoutAdmin from "../../../libs/components/layout/AdminLayout";
 
 const Orders = ({ initialInquiry, ...props }: any) => {
   const [ordersInquiry, setOrdersInquiry] =

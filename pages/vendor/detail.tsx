@@ -1,35 +1,42 @@
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import { Box, Button, Pagination, Stack, Typography } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import VendorProductCard from "@/libs/components/common/VendorProductCard";
 import StarIcon from "@mui/icons-material/Star";
-import VendorReviewCard from "@/libs/components/vendor/VendorReviewCard";
-import { CommentGroup } from "@/libs/enums/comment.enum";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import { useMutation, useQuery, useReactiveVar } from "@apollo/client";
+import { NextPage } from "next";
+import { Comment } from "../../libs/types/comment/comment";
+import { useDispatch } from "react-redux";
+import { userVar } from "../../apollo/store";
+import { Member } from "../../libs/types/member/member";
+import { ProductsInquiry } from "../../libs/types/product/product.input";
+import { CommentGroup } from "../../libs/enums/comment.enum";
 import {
   CommentInput,
   CommentsInquiry,
-} from "@/libs/types/comment/comment.input";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
-import DoubleCardBanner from "@/libs/components/common/DoubleCardBanner";
-import { useMutation, useQuery, useReactiveVar } from "@apollo/client";
-import { CREATE_COMMENT, LIKE_TARGET_PRODUCT } from "@/apollo/user/mutation";
-import { GET_COMMENTS, GET_MEMBER, GET_PRODUCTS } from "@/apollo/user/query";
-import { userVar } from "@/apollo/store";
-import { Member } from "@/libs/types/member/member";
-import { ProductsInquiry } from "@/libs/types/product/product.input";
-import { NextPage } from "next";
-import { Product } from "@/libs/types/product/product";
-import { T } from "@/libs/types/common";
+} from "../../libs/types/comment/comment.input";
+import {
+  CREATE_COMMENT,
+  LIKE_TARGET_PRODUCT,
+} from "../../apollo/user/mutation";
+import {
+  GET_COMMENTS,
+  GET_MEMBER,
+  GET_PRODUCTS,
+} from "../../apollo/user/query";
+import { T } from "../../libs/types/common";
 import {
   sweetErrorHandling,
   sweetMixinErrorAlert,
   sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { Messages, REACT_APP_API_URL } from "@/libs/types/config";
-import { Comment } from "@/libs/types/comment/comment";
-import { useDispatch } from "react-redux";
+} from "../../libs/types/sweetAlert";
+import { Messages, REACT_APP_API_URL } from "../../libs/types/config";
+import VendorProductCard from "../../libs/components/common/VendorProductCard";
+import DoubleCardBanner from "../../libs/components/common/DoubleCardBanner";
+import VendorReviewCard from "../../libs/components/vendor/VendorReviewCard";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
+import { Product } from "../../libs/types/product/product";
 
 const VendorDetail: NextPage = ({
   initialInput,

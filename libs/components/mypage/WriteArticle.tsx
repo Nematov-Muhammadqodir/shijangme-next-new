@@ -2,7 +2,7 @@ import React from "react";
 import { NextPage } from "next";
 import { Stack, Typography } from "@mui/material";
 import dynamic from "next/dynamic";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
+import ScrollFade from "../common/MotionWrapper";
 
 const TuiEditor = dynamic(() => import("../community/Teditor"), { ssr: false });
 //* We are importing TuiEditor dynamically to avoid server-side rendering issues with the Toast UI Editor.

@@ -1,12 +1,12 @@
-import { GET_ALL_ORDER_ITEMS_BY_ADMIN } from "@/apollo/admin/query";
-import OrderDetailCard from "@/libs/components/admin/OrderDetailCard";
-import withLayoutAdmin from "@/libs/components/layout/AdminLayout";
-import { OrderItem } from "@/libs/types/cart/order";
-import { T } from "@/libs/types/common";
 import { useQuery } from "@apollo/client";
 import { Stack } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import { OrderItem } from "../../../libs/types/cart/order";
+import { GET_ALL_ORDER_ITEMS_BY_ADMIN } from "../../../apollo/admin/query";
+import { T } from "../../../libs/types/common";
+import withLayoutAdmin from "../../../libs/components/layout/AdminLayout";
+import OrderDetailCard from "../../../libs/components/admin/OrderDetailCard";
 
 const AdminOrderDetail = () => {
   const router = useRouter();
@@ -38,7 +38,6 @@ const AdminOrderDetail = () => {
       setOrderId(router.query.id as string);
     }
   }, [router]);
-  const orderItemss = [1, 2, 3, 4];
   return (
     <div className="admin-order-detail">
       <Stack className="admin-page-intro">

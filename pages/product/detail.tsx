@@ -1,4 +1,3 @@
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
 import {
   Box,
   Button,
@@ -11,37 +10,43 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import Review from "@/libs/components/product/Review";
 import RateReviewIcon from "@mui/icons-material/RateReview";
-import { CommentGroup } from "@/libs/enums/comment.enum";
+import SendIcon from "@mui/icons-material/Send";
+import { useMutation, useQuery, useReactiveVar } from "@apollo/client";
+import { NextPage } from "next";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { userVar } from "../../apollo/store";
+import { Product } from "../../libs/types/product/product";
 import {
   CommentInput,
   CommentsInquiry,
-} from "@/libs/types/comment/comment.input";
-import SendIcon from "@mui/icons-material/Send";
-import BannerCard from "@/libs/components/product/BannerCard";
-import HorizontalCard from "@/libs/components/product/HorizontalCard";
-import Blogs from "@/libs/components/homePage/Blogs";
-import { CREATE_COMMENT, LIKE_TARGET_PRODUCT } from "@/apollo/user/mutation";
-import { useMutation, useQuery, useReactiveVar } from "@apollo/client";
-import { Direction, Message } from "@/libs/enums/common.enum";
+} from "../../libs/types/comment/comment.input";
+import { Comment } from "../../libs/types/comment/comment";
+import { CommentGroup } from "../../libs/enums/comment.enum";
+import {
+  CREATE_COMMENT,
+  LIKE_TARGET_PRODUCT,
+} from "../../apollo/user/mutation";
+import {
+  GET_COMMENTS,
+  GET_PRODUCT,
+  GET_PRODUCTS,
+} from "../../apollo/user/query";
+import { T } from "../../libs/types/common";
+import { Message } from "../../libs/enums/common.enum";
 import {
   sweetMixinErrorAlert,
   sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { GET_COMMENTS, GET_PRODUCT, GET_PRODUCTS } from "@/apollo/user/query";
-import { Product } from "@/libs/types/product/product";
-import { T } from "@/libs/types/common";
-import { ProductCollection } from "@/libs/enums/product.enum";
-import { NextPage } from "next";
-import { useRouter } from "next/router";
-import { userVar } from "@/apollo/store";
-import { REACT_APP_API_URL } from "@/libs/types/config";
-import { Comment } from "@/libs/types/comment/comment";
-import ScrollFade from "@/libs/components/common/MotionWrapper";
-import { useDispatch } from "react-redux";
-import { addItem } from "@/slices/cartSlice";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+} from "../../libs/types/sweetAlert";
+import ScrollFade from "../../libs/components/common/MotionWrapper";
+import { addItem } from "../../slices/cartSlice";
+import { REACT_APP_API_URL } from "../../libs/types/config";
+import Review from "../../libs/components/product/Review";
+import BannerCard from "../../libs/components/product/BannerCard";
+import HorizontalCard from "../../libs/components/product/HorizontalCard";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 export const getStaticProps = async ({ locale }: any) => ({
   props: {

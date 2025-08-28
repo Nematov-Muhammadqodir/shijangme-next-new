@@ -7,28 +7,26 @@ import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 import type { RootState } from "../../../store";
 import { useSelector, useDispatch } from "react-redux";
-import { Product } from "@/libs/types/product/product.js";
-import { CartItem } from "@/libs/types/search";
 import { useQuery, useReactiveVar } from "@apollo/client";
-import { GET_PRODUCT } from "@/apollo/user/query";
-import { REACT_APP_API_URL } from "@/libs/types/config";
-import { addItem, removeItem, deleteItem, deleteAll } from "@/slices/cartSlice";
 import { useMutation } from "@apollo/client";
-import { LIKE_TARGET_PRODUCT } from "@/apollo/user/mutation";
-import { T } from "@/libs/types/common";
-import { Message } from "@/libs/enums/common.enum";
+import router from "next/router.js";
+import { CartItem } from "../../types/search";
+import { Product } from "../../types/product/product";
+import { userVar } from "../../../apollo/store";
+import { LIKE_TARGET_PRODUCT } from "../../../apollo/user/mutation";
+import { GET_PRODUCT } from "../../../apollo/user/query";
+import { Message } from "../../enums/common.enum";
 import {
   wishListDecrement,
   wishListIncrement,
-  resetWishListAmount,
-  wishListValue,
-} from "@/slices/wishListSlice";
+} from "../../../slices/wishListSlice";
 import {
   sweetMixinErrorAlert,
   sweetTopSmallSuccessAlert,
-} from "@/libs/types/sweetAlert";
-import { userVar } from "@/apollo/store";
-import router from "next/router.js";
+} from "../../types/sweetAlert";
+import { REACT_APP_API_URL } from "../../types/config";
+import { addItem, deleteItem, removeItem } from "../../../slices/cartSlice";
+import { T } from "../../types/common";
 
 interface CartItemProps {
   cartItem: CartItem;

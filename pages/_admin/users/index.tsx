@@ -1,6 +1,3 @@
-import TopNavigation from "@/libs/components/admin/TopNavigation";
-import withLayoutAdmin from "@/libs/components/layout/AdminLayout";
-import { MembersInquiry } from "@/libs/types/member/member.input";
 import {
   InputAdornment,
   List,
@@ -13,14 +10,16 @@ import {
 import CancelRoundedIcon from "@mui/icons-material/CancelRounded";
 import React, { useCallback, useEffect, useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
-import { Member } from "@/libs/types/member/member";
-import { T } from "@/libs/types/common";
-import { GET_ALL_MEMBERS_BY_ADMIN } from "@/apollo/admin/query";
-import { MemberStatus, MemberType } from "@/libs/enums/member.enum";
-import MemberHorizontalCard from "@/libs/components/admin/MemberHorizontalCard";
-import { MemberUpdate } from "@/libs/types/member/member.update";
-import { UPDATE_MEMBER_BY_ADMIN } from "@/apollo/admin/mutation";
-import { sweetErrorHandling } from "@/libs/types/sweetAlert";
+import { Member } from "../../../libs/types/member/member";
+import { MembersInquiry } from "../../../libs/types/member/member.input";
+import { UPDATE_MEMBER_BY_ADMIN } from "../../../apollo/admin/mutation";
+import { GET_ALL_MEMBERS_BY_ADMIN } from "../../../apollo/admin/query";
+import { T } from "../../../libs/types/common";
+import { MemberStatus, MemberType } from "../../../libs/enums/member.enum";
+import { MemberUpdate } from "../../../libs/types/member/member.update";
+import { sweetErrorHandling } from "../../../libs/types/sweetAlert";
+import withLayoutAdmin from "../../../libs/components/layout/AdminLayout";
+import MemberHorizontalCard from "../../../libs/components/admin/MemberHorizontalCard";
 
 const Users = ({ initialInquiry, ...props }: any) => {
   const [anchorEl, setAnchorEl] = useState<[] | HTMLElement[]>([]);

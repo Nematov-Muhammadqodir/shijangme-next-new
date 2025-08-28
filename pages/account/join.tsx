@@ -1,9 +1,3 @@
-import { userVar } from "@/apollo/store";
-import { logIn, signUp } from "@/libs/auth";
-import withLayoutBasic from "@/libs/components/layout/LayoutBasic";
-import withLayoutMain from "@/libs/components/layout/LayoutHome";
-import { MemberType } from "@/libs/enums/member.enum";
-import { sweetMixinErrorAlert } from "@/libs/types/sweetAlert";
 import { useReactiveVar } from "@apollo/client";
 import {
   Box,
@@ -15,6 +9,11 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
+import { userVar } from "../../apollo/store";
+import { logIn, signUp } from "../../libs/auth";
+import { MemberType } from "../../libs/enums/member.enum";
+import { sweetMixinErrorAlert } from "../../libs/types/sweetAlert";
+import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 const Join = () => {
   const router = useRouter();

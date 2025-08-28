@@ -2,7 +2,7 @@ import { Stack } from "@mui/material";
 import Head from "next/head";
 import React, { useEffect } from "react";
 import LeftNavbar from "../admin/LeftNavbar";
-import { getJwtToken, updateUserInfo } from "@/libs/auth";
+import { getJwtToken, updateUserInfo } from "../../auth";
 
 const withLayoutAdmin = (Component: any) => {
   return (props: any) => {
