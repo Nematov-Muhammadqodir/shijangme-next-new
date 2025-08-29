@@ -21,9 +21,9 @@ const ChatApp = () => {
   const { selectedUser } = useChatStore();
   const router = useRouter();
 
-  useEffect(() => {
-    checkAuth();
-  }, [checkAuth]);
+  // useEffect(() => {
+  //   checkAuth();
+  // }, [checkAuth]);
 
   useEffect(() => {
     if (authUser === null) {
