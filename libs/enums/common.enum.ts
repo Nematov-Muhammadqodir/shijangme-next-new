@@ -14,7 +14,7 @@ export enum Message {
   USED_NICK_PHONE = "You are inserting already used nick or phone!",
   WRONG_PASSWORD = "Wrong password, please try again!",
   NOT_AUTHENTICATED = "You are not authenticated, Please log in first!",
-  TOKEN_NOT_EXIST = "Bearer Token is not provided",
+  TOKEN_NOT_EXIST = "You are not authenticated, Please log in first!",
   ONLY_SPECIFIC_ROLES_ALLOWED = "Allowed only for members with specific roles!",
   NOT_ALLOWED_REQUEST = "Not Allowed Request!",
   PROVIDE_ALLOWED_FORMAT = "Please provide jpg, jpeg or png images!",

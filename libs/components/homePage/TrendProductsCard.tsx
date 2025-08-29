@@ -58,6 +58,7 @@ const TrendProductsCard = (props: TrendProductsCardProps) => {
             <span>￦{product.productPrice}</span>
             <Button
               className="cart"
+              disabled={!user || !user._id}
               onClick={() =>
                 dispatch(
                   addItem({

@@ -55,6 +55,7 @@ const NewProductCard = (props: NewProductCardProps) => {
             <span>￦{product.productPrice}</span>
             <Button
               className="add-btn"
+              disabled={!user || !user._id}
               onClick={() =>
                 dispatch(
                   addItem({

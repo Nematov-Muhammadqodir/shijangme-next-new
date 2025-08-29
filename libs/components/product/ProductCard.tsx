@@ -67,6 +67,7 @@ const ProductCard = (props: ProductCardProps) => {
           <Button
             className="add-btn"
             variant="contained"
+            disabled={!user || !user._id}
             onClick={() =>
               dispatch(
                 addItem({

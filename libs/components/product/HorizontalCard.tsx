@@ -56,6 +56,7 @@ const HorizontalCard = (props: HorizontalCardProps) => {
             className="add-to-card-btn"
             variant="contained"
             endIcon={<AddShoppingCartIcon />}
+            disabled={!user || !user._id}
             onClick={() =>
               dispatch(
                 addItem({

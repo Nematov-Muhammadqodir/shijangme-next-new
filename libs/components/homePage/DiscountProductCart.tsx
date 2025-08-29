@@ -61,6 +61,7 @@ const DiscountProductCart = (props: DiscountProductCartProps) => {
           <Button
             className="add-to-cart-btn"
             variant="contained"
+            disabled={!user || !user._id}
             onClick={() =>
               dispatch(
                 addItem({
