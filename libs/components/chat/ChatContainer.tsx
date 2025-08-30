@@ -51,8 +51,12 @@ const ChatContainer = () => {
           <img
             src={
               message.senderId === authUser._id
-                ? `${"http://72.60.41.172:4008"}/${authUser?.profilePic}`
-                : `${"http://72.60.41.172:4008"}/${selectedUser?.profilePic}`
+                ? authUser?.profilePic
+                  ? `http://72.60.41.172:4008/${authUser.profilePic}`
+                  : "/img/profile/defaultImg.jpg"
+                : selectedUser?.profilePic
+                ? `http://72.60.41.172:4008/${selectedUser.profilePic}`
+                : "/img/profile/defaultImg.jpg"
             }
             alt=""
           />
