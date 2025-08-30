@@ -56,7 +56,7 @@ const ChatNavbar = () => {
             <span>Profile</span>
           </Button>
 
-          <Button onClick={handleLogout} disabled={selectedUser}>
+          <Button onClick={handleLogout} disabled={!!selectedUser}>
             <LogoutIcon />
             <span>Logout</span>
           </Button>
