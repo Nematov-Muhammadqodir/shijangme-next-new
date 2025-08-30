@@ -67,10 +67,10 @@ const Join = () => {
   //     await sweetMixinErrorAlert(err.message);
   //   }
   // }, [input]);
+  const user = useReactiveVar(userVar);
   const doLogin = async () => {
     try {
       await logIn(nick, password);
-      const user = useReactiveVar(userVar);
       if (user?.memberType === MemberType.ADMIN) {
         await router.push("/_admin/users");
       } else {

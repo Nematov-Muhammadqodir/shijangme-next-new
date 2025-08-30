@@ -280,7 +280,7 @@ const MyMenu = () => {
             </Stack>
           </ScrollFade>
           <ScrollFade>
-            <Stack className={"section"} sx={{ marginTop: "30px" }}>
+            <Stack className={"section"} sx={{ marginTop: "50px" }}>
               <div style={{ marginTop: "30px" }}>
                 <Typography className="title" variant={"h5"}>
                   Community
