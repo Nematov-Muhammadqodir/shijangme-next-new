@@ -16,6 +16,7 @@ const ChatNavbar = () => {
   const { logout } = useAuthStore();
   const router = useRouter();
   const user = useReactiveVar(userVar);
+  const { selectedUser } = useChatStore();
   const handleHomeClick = () => {
     if (user.memberType === MemberType.ADMIN) {
       router.push("/_admin/users");
@@ -55,7 +56,7 @@ const ChatNavbar = () => {
             <span>Profile</span>
           </Button>
 
-          <Button onClick={handleLogout}>
+          <Button onClick={handleLogout} disabled={selectedUser}>
             <LogoutIcon />
             <span>Logout</span>
           </Button>
