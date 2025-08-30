@@ -2,7 +2,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://kadai.uz/api", // or your IP:port
+  baseURL: "http://72.60.41.172/api", // or your IP:port
 });
 
 axiosInstance.interceptors.request.use((config) => {
@@ -12,3 +12,4 @@ axiosInstance.interceptors.request.use((config) => {
   }
   return config;
 });
+// https://72.60.41.172
