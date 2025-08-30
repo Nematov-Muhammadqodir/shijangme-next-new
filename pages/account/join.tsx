@@ -17,7 +17,7 @@ import withLayoutMain from "../../libs/components/layout/LayoutHome";
 
 const Join = () => {
   const router = useRouter();
-  const user = useReactiveVar(userVar);
+
   // Separate states
   const [nick, setNick] = useState("");
   const [password, setPassword] = useState("");
@@ -70,6 +70,7 @@ const Join = () => {
   const doLogin = async () => {
     try {
       await logIn(nick, password);
+      const user = useReactiveVar(userVar);
       if (user?.memberType === MemberType.ADMIN) {
         await router.push("/_admin/users");
       } else {
@@ -99,9 +100,7 @@ const Join = () => {
                 following sites.
               </p>
             </div>
-            <Box
-              className={`input-content-wrapper ${isAnimating ? "hidden" : ""}`}
-            >
+            <Box className={`input-content-wrapper `}>
               <Box className={"input-wrap"}>
                 <div className={"input-box"}>
                   <span>Nickname</span>
