@@ -88,7 +88,7 @@ const Join = () => {
     } catch (err: any) {
       await sweetMixinErrorAlert(err.message);
     }
-  }, []);
+  }, [nick, password]);
   const doSignUp = async () => {
     try {
       await signUp(nick, password, phone, type);
