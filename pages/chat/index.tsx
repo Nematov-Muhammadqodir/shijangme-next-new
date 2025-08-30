@@ -23,7 +23,7 @@ const ChatApp = () => {
 
   useEffect(() => {
     checkAuth();
-  }, [checkAuth]);
+  }, []);
 
   useEffect(() => {
     if (authUser === null) {

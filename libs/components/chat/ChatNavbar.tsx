@@ -28,6 +28,11 @@ const ChatNavbar = () => {
     router.push("/chat/profile");
   };
 
+  const handleLogout = async () => {
+    await logout();
+    router.push("/chat/login");
+  };
+
   const backToChat = router.pathname === "/chat";
 
   return (
@@ -50,7 +55,7 @@ const ChatNavbar = () => {
             <span>Profile</span>
           </Button>
 
-          <Button onClick={logout}>
+          <Button onClick={handleLogout}>
             <LogoutIcon />
             <span>Logout</span>
           </Button>

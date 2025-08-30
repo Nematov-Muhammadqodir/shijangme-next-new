@@ -18,12 +18,11 @@ import withLayoutMain from "../../libs/components/layout/LayoutHome";
 const Join = () => {
   const router = useRouter();
   const user = useReactiveVar(userVar);
-  const [input, setInput] = useState({
-    nick: "",
-    password: "",
-    phone: "",
-    type: "USER",
-  });
+  // Separate states
+  const [nick, setNick] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [type, setType] = useState<"USER" | "VENDOR">("USER");
   const [loginView, setLoginView] = useState<boolean>(true);
   const [isAnimating, setIsAnimating] = useState(false);
   /** HANDLERS **/
@@ -35,45 +34,59 @@ const Join = () => {
     }, 300); // 300ms fade duration (must match CSS)
   };
 
-  const checkUserTypeHandler = (e: any) => {
-    const checked = e.target.checked;
-    if (checked) {
-      const value = e.target.name;
-      handleInput("type", value);
-    } else {
-      handleInput("type", "USER");
-    }
+  // const checkUserTypeHandler = (e: any) => {
+  //   const checked = e.target.checked;
+  //   if (checked) {
+  //     const value = e.target.name;
+  //     handleInput("type", value);
+  //   } else {
+  //     handleInput("type", "USER");
+  //   }
+  // };
+
+  // const handleInput = useCallback((name: any, value: any) => {
+  //   setInput((prev) => {
+  //     return { ...prev, [name]: value };
+  //   });
+  // }, []);
+
+  const checkUserTypeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setType(e.target.checked ? (e.target.name as "USER" | "VENDOR") : "USER");
   };
 
-  const handleInput = useCallback((name: any, value: any) => {
-    setInput((prev) => {
-      return { ...prev, [name]: value };
-    });
-  }, []);
-
-  const doLogin = useCallback(async () => {
-    console.warn(input);
+  // const doLogin = useCallback(async () => {
+  //   console.warn(input);
+  //   try {
+  //     await logIn(input.nick, input.password);
+  //     if (user?.memberType === MemberType.ADMIN) {
+  //       await router.push(`${"/_admin/users"}`);
+  //     } else {
+  //       await router.push(`${router.query.referrer ?? "/"}`);
+  //     }
+  //   } catch (err: any) {
+  //     await sweetMixinErrorAlert(err.message);
+  //   }
+  // }, [input]);
+  const doLogin = async () => {
     try {
-      await logIn(input.nick, input.password);
+      await logIn(nick, password);
       if (user?.memberType === MemberType.ADMIN) {
-        await router.push(`${"/_admin/users"}`);
+        await router.push("/_admin/users");
       } else {
         await router.push(`${router.query.referrer ?? "/"}`);
       }
     } catch (err: any) {
       await sweetMixinErrorAlert(err.message);
     }
-  }, [input]);
-
-  const doSignUp = useCallback(async () => {
-    console.log("signup", input);
+  };
+  const doSignUp = async () => {
     try {
-      await signUp(input.nick, input.password, input.phone, input.type);
+      await signUp(nick, password, phone, type);
       await router.push(`${router.query.referrer ?? "/"}`);
     } catch (err: any) {
       await sweetMixinErrorAlert(err.message);
     }
-  }, [input]);
+  };
   return (
     <div className="join-main-container">
       <Stack className="container">
@@ -95,7 +108,7 @@ const Join = () => {
                   <input
                     type="text"
                     placeholder={"Enter Nickname"}
-                    onChange={(e) => handleInput("nick", e.target.value)}
+                    onChange={(e) => setNick(e.target.value)}
                     required={true}
                     onKeyDown={(event) => {
                       if (event.key == "Enter" && loginView) doLogin();
@@ -108,7 +121,7 @@ const Join = () => {
                   <input
                     type="text"
                     placeholder={"Enter Password"}
-                    onChange={(e) => handleInput("password", e.target.value)}
+                    onChange={(e) => setPassword(e.target.value)}
                     required={true}
                     onKeyDown={(event) => {
                       if (event.key == "Enter" && loginView) doLogin();
@@ -122,7 +135,7 @@ const Join = () => {
                     <input
                       type="text"
                       placeholder={"Enter Phone"}
-                      onChange={(e) => handleInput("phone", e.target.value)}
+                      onChange={(e) => setPhone(e.target.value)}
                       required={true}
                       onKeyDown={(event) => {
                         if (event.key == "Enter") doSignUp();
@@ -144,8 +157,8 @@ const Join = () => {
                           <Checkbox
                             size="small"
                             name={"USER"}
+                            checked={type === "USER"}
                             onChange={checkUserTypeHandler}
-                            checked={input?.type == "USER"}
                           />
                         }
                         label="User"
@@ -158,7 +171,7 @@ const Join = () => {
                             size="small"
                             name={"VENDOR"}
                             onChange={checkUserTypeHandler}
-                            checked={input?.type == "VENDOR"}
+                            checked={type === "VENDOR"}
                           />
                         }
                         label="Vendor"
@@ -183,7 +196,7 @@ const Join = () => {
               {loginView ? (
                 <Button
                   variant="contained"
-                  disabled={input.nick == "" || input.password == ""}
+                  disabled={!nick || !password}
                   onClick={doLogin}
                 >
                   LOGIN
@@ -191,12 +204,7 @@ const Join = () => {
               ) : (
                 <Button
                   variant="contained"
-                  disabled={
-                    input.nick == "" ||
-                    input.password == "" ||
-                    input.phone == "" ||
-                    input.type == ""
-                  }
+                  disabled={!nick || !password || !phone || !type}
                   onClick={doSignUp}
                 >
                   SIGNUP
