@@ -145,7 +145,7 @@ const Navbar = ({ initialValues, ...props }: any) => {
   };
 
   const handleChat = async () => {
-    await router.push({ pathname: "http://72.60.41.172:5001/chat" });
+    await router.push({ pathname: "/chat" });
   };
 
   const {
