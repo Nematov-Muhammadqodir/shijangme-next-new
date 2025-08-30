@@ -67,19 +67,28 @@ const Join = () => {
   //     await sweetMixinErrorAlert(err.message);
   //   }
   // }, [input]);
-  const user = useReactiveVar(userVar);
-  const doLogin = async () => {
+  //! const user = useReactiveVar(userVar);
+  //! const doLogin = async () => {
+  //!   try {
+  //!     await logIn(nick, password);
+  //!     if (user?.memberType === MemberType.ADMIN) {
+  //!       await router.push("/_admin/users");
+  //!     } else {
+  //!       await router.push(`${router.query.referrer ?? "/"}`);
+  //!     }
+  //!   } catch (err: any) {
+  //!     await sweetMixinErrorAlert(err.message);
+  //!  }
+  //! };
+  const doLogin = useCallback(async () => {
+    // console.warn(input);
     try {
       await logIn(nick, password);
-      if (user?.memberType === MemberType.ADMIN) {
-        await router.push("/_admin/users");
-      } else {
-        await router.push(`${router.query.referrer ?? "/"}`);
-      }
+      await router.push(`${router.query.referrer ?? "/_admin/users"}`);
     } catch (err: any) {
       await sweetMixinErrorAlert(err.message);
     }
-  };
+  }, []);
   const doSignUp = async () => {
     try {
       await signUp(nick, password, phone, type);
