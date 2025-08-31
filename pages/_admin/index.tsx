@@ -1,3 +1,4 @@
+import withLayoutAdmin from "../../libs/components/layout/AdminLayout";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
@@ -11,4 +12,4 @@ const AdminHome = () => {
   return <></>;
 };
 
-export default AdminHome;
+export default withLayoutAdmin(AdminHome);
