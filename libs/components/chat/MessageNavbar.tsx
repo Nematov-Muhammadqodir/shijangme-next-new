@@ -14,7 +14,7 @@ const MessageNavbar = () => {
         <img
           src={
             selectedUser?.profilePic
-              ? `http://72.60.41.172:4008/${selectedUser.profilePic}`
+              ? `${process.env.NEXT_PUBLIC_CHAT_URL}/${selectedUser.profilePic}`
               : "/img/profile/defaultImg.jpg"
           }
           alt=""

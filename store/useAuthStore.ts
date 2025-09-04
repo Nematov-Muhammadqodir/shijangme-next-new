@@ -4,7 +4,7 @@ import { axiosInstance } from "@/libs/axios";
 import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
-const BASE_URL = "http://72.60.41.172:4008";
+const BASE_URL = process.env.NEXT_PUBLIC_CHAT_URL;
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,

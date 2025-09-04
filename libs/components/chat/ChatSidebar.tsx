@@ -58,7 +58,7 @@ const ChatSidebar = () => {
               <img
                 src={
                   user?.profilePic
-                    ? `http://72.60.41.172:4008/${user.profilePic}`
+                    ? `${process.env.NEXT_PUBLIC_CHAT_URL}/${user.profilePic}`
                     : "/img/profile/defaultImg.jpg"
                 }
                 alt=""
