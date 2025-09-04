@@ -2,6 +2,7 @@ import { Box, Stack } from "@mui/material";
 import React from "react";
 import { BoardArticle } from "../../types/board-article/board-article";
 import { formatDate, REACT_APP_API_URL } from "../../types/config";
+import { useRouter } from "next/router";
 
 interface BlogCardProps {
   boardArticle: BoardArticle;
@@ -9,13 +10,24 @@ interface BlogCardProps {
 
 const BlogsCard = (props: BlogCardProps) => {
   const { boardArticle } = props;
+  const router = useRouter();
 
   const imagePath: string = boardArticle?.articleImage
     ? `${REACT_APP_API_URL}/${boardArticle?.articleImage}`
     : "/img/homePage/article-default.jpg";
 
+  const handleBlogDetail = () => {
+    router.push({
+      pathname: "/community/detail",
+      query: {
+        articleCategory: boardArticle?.articleCategory,
+        id: boardArticle?._id,
+      },
+    });
+  };
+
   return (
-    <div className="blog-card-main-container">
+    <div className="blog-card-main-container" onClick={handleBlogDetail}>
       <Stack className="blog-card">
         <Stack className="blog-img-container">
           <img src={imagePath} alt="blog-image" />
@@ -27,7 +39,7 @@ const BlogsCard = (props: BlogCardProps) => {
           </Stack>
           <p className="blog-title">{boardArticle.articleTitle}</p>
           <div className="divider"></div>
-          <p className="blog-content">{boardArticle.articleContent}</p>
+          {/* <p className="blog-content">{boardArticle.articleContent}</p> */}
         </Stack>
       </Stack>
     </div>
