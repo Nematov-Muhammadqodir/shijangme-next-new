@@ -2,7 +2,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://72.60.41.172:4008/api", // or your IP:port
+  baseURL: `${process.env.NEXT_PUBLIC_CHAT_URL}/api`, // or your IP:port
 });
 
 axiosInstance.interceptors.request.use((config) => {

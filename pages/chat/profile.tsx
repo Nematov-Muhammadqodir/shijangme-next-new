@@ -34,7 +34,7 @@ const ProfilePage = () => {
   };
 
   console.log("authUser", authUser);
-  const imagePath = `${"http://72.60.41.172:4008"}/${authUser?.profilePic}`;
+  const imagePath = `${process.env.NEXT_PUBLIC_CHAT_URL}/${authUser?.profilePic}`;
 
   useEffect(() => {
     checkAuth();

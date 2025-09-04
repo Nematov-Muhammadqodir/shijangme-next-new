@@ -52,10 +52,10 @@ const ChatContainer = () => {
             src={
               message.senderId === authUser._id
                 ? authUser?.profilePic
-                  ? `http://72.60.41.172:4008/${authUser.profilePic}`
+                  ? `${process.env.NEXT_PUBLIC_CHAT_URL}/${authUser.profilePic}`
                   : "/img/profile/defaultImg.jpg"
                 : selectedUser?.profilePic
-                ? `http://72.60.41.172:4008/${selectedUser.profilePic}`
+                ? `${process.env.NEXT_PUBLIC_CHAT_URL}/${selectedUser.profilePic}`
                 : "/img/profile/defaultImg.jpg"
             }
             alt=""
@@ -66,7 +66,7 @@ const ChatContainer = () => {
               <div>
                 {message.image && (
                   <img
-                    src={`${"http://72.60.41.172:4008"}${message.image}`}
+                    src={`${process.env.NEXT_PUBLIC_CHAT_URL}${message.image}`}
                     alt="Attachment"
                     className="attached-image"
                   />
