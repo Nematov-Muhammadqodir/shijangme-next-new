@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import React, { useCallback, useState } from "react";
 import { logIn, signUp } from "../../libs/auth";
 import { sweetMixinErrorAlert } from "../../libs/types/sweetAlert";
+import HomeIcon from "@mui/icons-material/Home";
 
 const Join = () => {
   const router = useRouter();
@@ -58,7 +59,7 @@ const Join = () => {
                 className="home-page-return"
                 onClick={() => router.push("/")}
               >
-                Home
+                <HomeIcon />
               </Button>
               <div className={"info"}>
                 <span>{loginView ? "login" : "signup"}</span>

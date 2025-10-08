@@ -69,6 +69,17 @@ const LeftNavbar = () => {
             <GroupIcon className="icon" />
             <span className="text">Users</span>
           </Button>
+          <Button
+            className={
+              currentPath === "/_admin/dashboard"
+                ? "users-btn-active"
+                : "users-btn"
+            }
+            onClick={() => handleRouteChange("dashboard")}
+          >
+            <GroupIcon className="icon" />
+            <span className="text">Dashboard</span>
+          </Button>
 
           <Button
             className={
