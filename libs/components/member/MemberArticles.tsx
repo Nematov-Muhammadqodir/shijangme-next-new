@@ -76,53 +76,43 @@ const MemberArticles: NextPage = ({ initialInput, ...props }: any) => {
   return (
     <div id="member-articles-page">
       <Stack className="main-title-box">
-        <ScrollFade>
-          <Stack className="right-box">
-            <Typography className="main-title">Articles</Typography>
-          </Stack>
-        </ScrollFade>
+        <Stack className="right-box">
+          <Typography className="main-title">Articles</Typography>
+        </Stack>
       </Stack>
       <Stack className="articles-list-box">
         {memberBoArticles?.length === 0 && (
           <div className={"no-data"}>
-            <ScrollFade>
-              <img src="/img/icons/icoAlert.svg" alt="" />
-            </ScrollFade>
-            <ScrollFade>
-              <p>No Articles found!</p>
-            </ScrollFade>
+            <img src="/img/icons/icoAlert.svg" alt="" />
+            <p>No Articles found!</p>
           </div>
         )}
         {memberBoArticles?.map((boardArticle: BoardArticle) => {
           return (
-            <ScrollFade>
-              <CommunityCard
-                likeArticleHandler={likeArticleHandler}
-                boardArticle={boardArticle}
-                key={boardArticle?._id}
-                size={"small"}
-              />
-            </ScrollFade>
+            <CommunityCard
+              likeArticleHandler={likeArticleHandler}
+              boardArticle={boardArticle}
+              key={boardArticle?._id}
+              size={"small"}
+            />
           );
         })}
       </Stack>
       {memberBoArticles?.length !== 0 && (
-        <ScrollFade>
-          <Stack className="pagination-config">
-            <Stack className="pagination-box">
-              <Pagination
-                count={Math.ceil(total / searchFilter.limit) || 1}
-                page={searchFilter.page}
-                shape="circular"
-                color="primary"
-                onChange={paginationHandler}
-              />
-            </Stack>
-            <Stack className="total-result">
-              <Typography>{total} property available</Typography>
-            </Stack>
+        <Stack className="pagination-config">
+          <Stack className="pagination-box">
+            <Pagination
+              count={Math.ceil(total / searchFilter.limit) || 1}
+              page={searchFilter.page}
+              shape="circular"
+              color="primary"
+              onChange={paginationHandler}
+            />
           </Stack>
-        </ScrollFade>
+          <Stack className="total-result">
+            <Typography>{total} property available</Typography>
+          </Stack>
+        </Stack>
       )}
     </div>
   );

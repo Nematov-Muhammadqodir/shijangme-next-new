@@ -57,61 +57,52 @@ const MemberProducts: NextPage = ({ initialInput, ...props }: any) => {
   };
   return (
     <div id="member-products-page">
-      <ScrollFade>
-        <Stack className="main-title-box">
-          <Stack className="right-box">
-            <Typography className="main-title">Products</Typography>
-          </Stack>
+      <Stack className="main-title-box">
+        <Stack className="right-box">
+          <Typography className="main-title">Products</Typography>
         </Stack>
-      </ScrollFade>
+      </Stack>
+
       <Stack className="products-list-box">
         <Stack className="list-box">
           {vendorProducts?.length > 0 && (
-            <ScrollFade>
-              <Stack className="listing-title-box">
-                <Typography className="title-text">Listing title</Typography>
-                <Typography className="title-text">Date Published</Typography>
-                <Typography className="title-text">Status</Typography>
-                <Typography className="title-text">View</Typography>
-              </Stack>
-            </ScrollFade>
+            <Stack className="listing-title-box">
+              <Typography className="title-text">Listing title</Typography>
+              <Typography className="title-text">Date Published</Typography>
+              <Typography className="title-text">Status</Typography>
+              <Typography className="title-text">View</Typography>
+            </Stack>
           )}
           {vendorProducts?.length === 0 && (
-            <ScrollFade>
-              <div className={"no-data"}>
-                <img src="/img/icons/icoAlert.svg" alt="" />
-                <p>No Product found!</p>
-              </div>
-            </ScrollFade>
+            <div className={"no-data"}>
+              <img src="/img/icons/icoAlert.svg" alt="" />
+              <p>No Product found!</p>
+            </div>
           )}
           {vendorProducts.map((product) => {
             return (
-              <ScrollFade>
-                <MyProductsCard
-                  key={product._id}
-                  product={product}
-                  memberPage={true}
-                />
-              </ScrollFade>
+              <MyProductsCard
+                key={product._id}
+                product={product}
+                memberPage={true}
+              />
             );
           })}
           {vendorProducts.length !== 0 && (
-            <ScrollFade>
-              <Stack className="pagination-config">
-                <Stack className="pagination-box">
-                  <Pagination
-                    count={Math.ceil(total / searchFilter.limit)}
-                    page={searchFilter.page}
-                    shape="circular"
-                    color="primary"
-                    onChange={paginationHandler}
-                  />
-                </Stack>
-                <Stack className="total-result">
-                  <Typography>{total} property available</Typography>
-                </Stack>
+            <Stack className="pagination-config">
+              <Stack className="pagination-box">
+                <Pagination
+                  count={Math.ceil(total / searchFilter.limit)}
+                  page={searchFilter.page}
+                  shape="circular"
+                  color="primary"
+                  onChange={paginationHandler}
+                />
               </Stack>
-            </ScrollFade>
+              <Stack className="total-result">
+                <Typography>{total} property available</Typography>
+              </Stack>
+            </Stack>
           )}
         </Stack>
       </Stack>

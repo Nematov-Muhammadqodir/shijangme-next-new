@@ -245,181 +245,174 @@ const ProductDetail: NextPage = ({ initialComment, ...props }: any) => {
     <div className="product-detail-main-container">
       <Stack className="container">
         <Stack className="product-detail-config">
-          <ScrollFade>
-            <Stack className="product-detail-intro">
-              <Stack className="product-name">
-                <Stack className="product-main-details">
-                  <span className="name">{product?.productName}</span>
-                  <Stack className="product-type">
-                    <span>{product?.productOrigin}</span>
-                    <span>{product?.productCollection}</span>
-                  </Stack>
-                </Stack>
-                <Stack className="product-ratings">
-                  <Box className="view">
-                    <RemoveRedEyeIcon />
-                    <span>{product?.productViews}</span>
-                  </Box>
-                  <Box
-                    className="like" // @ts-ignore
-                    onClick={() => likeProductHandler(user, product?._id)}
-                  >
-                    {product?.meLiked && product.meLiked[0]?.myFavorite ? (
-                      <FavoriteIcon />
-                    ) : (
-                      <FavoriteBorderIcon />
-                    )}
-
-                    <span>{product?.productLikes}</span>
-                  </Box>
+          <Stack className="product-detail-intro">
+            <Stack className="product-name">
+              <Stack className="product-main-details">
+                <span className="name">{product?.productName}</span>
+                <Stack className="product-type">
+                  <span>{product?.productOrigin}</span>
+                  <span>{product?.productCollection}</span>
                 </Stack>
               </Stack>
-              <div className="divider"></div>
-              <Stack className="bottom-details">
-                <Stack className="detail">
-                  <span className="discount">
-                    <span className="bold">Discount:</span>{" "}
-                    {product?.productDiscountRate}%
-                  </span>
-                  <span className="left-count">
-                    <span className="bold">Left Count:</span>{" "}
-                    {product?.productLeftCount}
-                  </span>
-                  <span className="volume">
-                    <span className="bold">Volume:</span>{" "}
-                    {product?.productVolume}
-                  </span>
-                  <span className="volume">
-                    <span className="bold">Vendor:</span>{" "}
-                    {product?.productOwnerData?.memberNick}
-                  </span>
-                </Stack>
-                <Box className="price-container">
-                  <span className="price">{product?.productPrice}￦</span>
+              <Stack className="product-ratings">
+                <Box className="view">
+                  <RemoveRedEyeIcon />
+                  <span>{product?.productViews}</span>
+                </Box>
+                <Box
+                  className="like" // @ts-ignore
+                  onClick={() => likeProductHandler(user, product?._id)}
+                >
+                  {product?.meLiked && product.meLiked[0]?.myFavorite ? (
+                    <FavoriteIcon />
+                  ) : (
+                    <FavoriteBorderIcon />
+                  )}
+
+                  <span>{product?.productLikes}</span>
                 </Box>
               </Stack>
             </Stack>
-          </ScrollFade>
-          <ScrollFade>
-            <Stack className="product-images">
-              <Stack className="product-main-image-container">
-                <div className="description-container">
-                  <span className="description">{product?.productDesc}</span>
-                  <Button
-                    className="description-btn"
-                    endIcon={<KeyboardDoubleArrowRightIcon />}
-                    onClick={() =>
-                      dispatch(
-                        addItem({
-                          _id: product?._id,
-                          quantity: 1,
-                          price: Number(product?.productPrice),
-                          name: product?.productName,
-                          image: product?.productImages[0],
-                          discountRate: product?.productDiscountRate,
-                        })
-                      )
-                    }
-                  >
-                    Add To Cart
-                  </Button>
-                </div>
+            <div className="divider"></div>
+            <Stack className="bottom-details">
+              <Stack className="detail">
+                <span className="discount">
+                  <span className="bold">Discount:</span>{" "}
+                  {product?.productDiscountRate}%
+                </span>
+                <span className="left-count">
+                  <span className="bold">Left Count:</span>{" "}
+                  {product?.productLeftCount}
+                </span>
+                <span className="volume">
+                  <span className="bold">Volume:</span> {product?.productVolume}
+                </span>
+                <span className="volume">
+                  <span className="bold">Vendor:</span>{" "}
+                  {product?.productOwnerData?.memberNick}
+                </span>
+              </Stack>
+              <Box className="price-container">
+                <span className="price">{product?.productPrice}￦</span>
+              </Box>
+            </Stack>
+          </Stack>
 
-                <div className="image">
+          <Stack className="product-images">
+            <Stack className="product-main-image-container">
+              <div className="description-container">
+                <span className="description">{product?.productDesc}</span>
+                <Button
+                  className="description-btn"
+                  endIcon={<KeyboardDoubleArrowRightIcon />}
+                  onClick={() =>
+                    dispatch(
+                      addItem({
+                        _id: product?._id,
+                        quantity: 1,
+                        price: Number(product?.productPrice),
+                        name: product?.productName,
+                        image: product?.productImages[0],
+                        discountRate: product?.productDiscountRate,
+                      })
+                    )
+                  }
+                >
+                  Add To Cart
+                </Button>
+              </div>
+
+              <div className="image">
+                <img
+                  className="product-image"
+                  src={
+                    slideImage
+                      ? `${REACT_APP_API_URL}/${slideImage}`
+                      : "/img/products/pinapple.png"
+                  }
+                  alt={"main-image"}
+                />
+                <div className="tag">
                   <img
-                    className="product-image"
-                    src={
-                      slideImage
-                        ? `${REACT_APP_API_URL}/${slideImage}`
-                        : "/img/products/pinapple.png"
-                    }
+                    src={"/img/products/detail-star.svg"}
                     alt={"main-image"}
                   />
-                  <div className="tag">
-                    <img
-                      src={"/img/products/detail-star.svg"}
-                      alt={"main-image"}
-                    />
-                    <span className="tag-price">
-                      <p>{product?.productPrice}￦</p>
-                    </span>
-                  </div>
+                  <span className="tag-price">
+                    <p>{product?.productPrice}￦</p>
+                  </span>
                 </div>
+              </div>
+            </Stack>
+            <Stack className="product-sub-image-container">
+              {product?.productImages.map((subImg: string) => {
+                const imagePath: string = `${REACT_APP_API_URL}/${subImg}`;
+                return (
+                  <div
+                    className="sub-img-box"
+                    onClick={() => changeImageHandler(subImg)}
+                    key={subImg}
+                  >
+                    <img src={imagePath} alt="" />
+                  </div>
+                );
+              })}
+            </Stack>
+          </Stack>
+
+          {/* @ts-ignore */}
+          {product?.productComments > 0 && (
+            <Stack className="reviews-main-container">
+              <Stack className="filter-box">
+                <RateReviewIcon />
+                <span>{product?.productComments} Reviews</span>
               </Stack>
-              <Stack className="product-sub-image-container">
-                {product?.productImages.map((subImg: string) => {
-                  const imagePath: string = `${REACT_APP_API_URL}/${subImg}`;
+              <Stack className="review-list">
+                {productComments?.map((comment: Comment, index) => {
+                  return <Review key={comment?._id} comment={comment} />;
+                })}
+              </Stack>
+            </Stack>
+          )}
+
+          <Stack className="leave-review-section-main">
+            <Typography className="main-title">Leave a Review</Typography>
+            <Typography className="review-title">Review</Typography>
+            <textarea
+              onChange={({ target: { value } }: any) => {
+                setInsertCommentData({
+                  ...insertCommentData,
+                  commentContent: value,
+                });
+              }}
+              value={insertCommentData.commentContent}
+              placeholder="Write a Review"
+            ></textarea>
+            <Button
+              className="submit-review-btn"
+              endIcon={<SendIcon />}
+              disabled={
+                insertCommentData.commentContent === "" || user?._id === ""
+              }
+              onClick={createCommentHandler}
+            >
+              Submit Review
+            </Button>
+          </Stack>
+
+          {collectionProducts.length !== 0 && (
+            <Stack className="similar-products-list-main">
+              <BannerCard />
+              <Stack className="similar-products-list-container">
+                {collectionProducts.map((product: Product) => {
                   return (
-                    <div
-                      className="sub-img-box"
-                      onClick={() => changeImageHandler(subImg)}
-                      key={subImg}
-                    >
-                      <img src={imagePath} alt="" />
-                    </div>
+                    <HorizontalCard
+                      product={product}
+                      likeProductHandler={likeProductHandler}
+                    />
                   );
                 })}
               </Stack>
             </Stack>
-          </ScrollFade>
-          {/* @ts-ignore */}
-          {product?.productComments > 0 && (
-            <ScrollFade>
-              <Stack className="reviews-main-container">
-                <Stack className="filter-box">
-                  <RateReviewIcon />
-                  <span>{product?.productComments} Reviews</span>
-                </Stack>
-                <Stack className="review-list">
-                  {productComments?.map((comment: Comment, index) => {
-                    return <Review key={comment?._id} comment={comment} />;
-                  })}
-                </Stack>
-              </Stack>
-            </ScrollFade>
-          )}
-          <ScrollFade>
-            <Stack className="leave-review-section-main">
-              <Typography className="main-title">Leave a Review</Typography>
-              <Typography className="review-title">Review</Typography>
-              <textarea
-                onChange={({ target: { value } }: any) => {
-                  setInsertCommentData({
-                    ...insertCommentData,
-                    commentContent: value,
-                  });
-                }}
-                value={insertCommentData.commentContent}
-                placeholder="Write a Review"
-              ></textarea>
-              <Button
-                className="submit-review-btn"
-                endIcon={<SendIcon />}
-                disabled={
-                  insertCommentData.commentContent === "" || user?._id === ""
-                }
-                onClick={createCommentHandler}
-              >
-                Submit Review
-              </Button>
-            </Stack>
-          </ScrollFade>
-          {collectionProducts.length !== 0 && (
-            <ScrollFade>
-              <Stack className="similar-products-list-main">
-                <BannerCard />
-                <Stack className="similar-products-list-container">
-                  {collectionProducts.map((product: Product) => {
-                    return (
-                      <HorizontalCard
-                        product={product}
-                        likeProductHandler={likeProductHandler}
-                      />
-                    );
-                  })}
-                </Stack>
-              </Stack>
-            </ScrollFade>
           )}
         </Stack>
       </Stack>

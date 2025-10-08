@@ -97,56 +97,52 @@ const MyFavorites: NextPage = () => {
 
   return (
     <div id="my-favorites-page">
-      <ScrollFade>
-        <Stack className="main-title-box">
-          <Stack className="right-box">
-            <Typography className="main-title">My Favorites</Typography>
-            <Typography className="sub-title">
-              We are glad to see you again!
+      <Stack className="main-title-box">
+        <Stack className="right-box">
+          <Typography className="main-title">My Favorites</Typography>
+          <Typography className="sub-title">
+            We are glad to see you again!
+          </Typography>
+        </Stack>
+      </Stack>
+
+      <Stack className="favorites-list-box">
+        {myFavorites?.length ? (
+          myFavorites?.map((product: Product) => {
+            return (
+              <MyPageFavoriteCard
+                product={product}
+                likeProductHandler={likeProductHandler}
+                myFavorites={true}
+                key={product._id}
+              />
+            );
+          })
+        ) : (
+          <div className={"no-data"}>
+            <img src="/img/icons/icoAlert.svg" alt="" />
+            <p>No Favorites found!</p>
+          </div>
+        )}
+      </Stack>
+
+      {myFavorites?.length ? (
+        <Stack className="pagination-config">
+          <Stack className="pagination-box">
+            <Pagination
+              count={Math.ceil(total / searchFavorites.limit)}
+              page={searchFavorites.page}
+              shape="circular"
+              color="primary"
+              onChange={paginationHandler}
+            />
+          </Stack>
+          <Stack className="total-result">
+            <Typography>
+              Total {total} favorite product{total > 1 ? "s" : ""}
             </Typography>
           </Stack>
         </Stack>
-      </ScrollFade>
-      <ScrollFade>
-        <Stack className="favorites-list-box">
-          {myFavorites?.length ? (
-            myFavorites?.map((product: Product) => {
-              return (
-                <MyPageFavoriteCard
-                  product={product}
-                  likeProductHandler={likeProductHandler}
-                  myFavorites={true}
-                  key={product._id}
-                />
-              );
-            })
-          ) : (
-            <div className={"no-data"}>
-              <img src="/img/icons/icoAlert.svg" alt="" />
-              <p>No Favorites found!</p>
-            </div>
-          )}
-        </Stack>
-      </ScrollFade>
-      {myFavorites?.length ? (
-        <ScrollFade>
-          <Stack className="pagination-config">
-            <Stack className="pagination-box">
-              <Pagination
-                count={Math.ceil(total / searchFavorites.limit)}
-                page={searchFavorites.page}
-                shape="circular"
-                color="primary"
-                onChange={paginationHandler}
-              />
-            </Stack>
-            <Stack className="total-result">
-              <Typography>
-                Total {total} favorite product{total > 1 ? "s" : ""}
-              </Typography>
-            </Stack>
-          </Stack>
-        </ScrollFade>
       ) : null}
     </div>
   );

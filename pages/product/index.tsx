@@ -226,9 +226,9 @@ const Products = ({ initialInput }: ProductsProps) => {
           </Stack>
         </Stack> */}
         {/* <MultipleBanner /> */}
-        <ScrollFade>
-          <ProductBanner />
-        </ScrollFade>
+
+        <ProductBanner />
+
         <Box component={"div"} className={"right"}>
           <span className="sort-text">Sort by:</span>
           <div className="sorting-container">
@@ -276,66 +276,64 @@ const Products = ({ initialInput }: ProductsProps) => {
             </Menu>
           </div>
         </Box>
-        <ScrollFade>
-          <Stack className="filtered-products-list">
-            <Filter
-              searchFilter={searchFilter}
-              setSearchFilter={setSearchFilter}
-              initialInput={initialInput}
-            />
 
-            <Stack className="product-cards-list-container">
-              <Stack className="product-cards-list">
-                {productsToDisplay.length === 0 ? (
-                  <Box
-                    component={"div"}
-                    className={"empty-list"}
-                    sx={{ gridColumn: "1 / -1" }}
-                  >
-                    No Products Found!
-                  </Box>
-                ) : (
-                  productsToDisplay.map((product, key) => (
-                    <Fade in={true} timeout={1000} key={key}>
-                      <Box>
-                        <ProductCard
-                          likeProductHandler={likeProductHandler}
-                          product={product}
-                        />
-                      </Box>
-                    </Fade>
-                  ))
-                )}
-              </Stack>
+        <Stack className="filtered-products-list">
+          <Filter
+            searchFilter={searchFilter}
+            setSearchFilter={setSearchFilter}
+            initialInput={initialInput}
+          />
 
-              <Stack className="pagination-config">
-                {products.length !== 0 && (
-                  <Stack className="pagination-box">
-                    <Pagination
-                      page={currentPage}
-                      count={Math.ceil(total / searchFilter.limit)}
-                      onChange={handlePaginationChange}
-                      shape="circular"
-                      color="primary"
-                    />
-                  </Stack>
-                )}
+          <Stack className="product-cards-list-container">
+            <Stack className="product-cards-list">
+              {productsToDisplay.length === 0 ? (
+                <Box
+                  component={"div"}
+                  className={"empty-list"}
+                  sx={{ gridColumn: "1 / -1" }}
+                >
+                  No Products Found!
+                </Box>
+              ) : (
+                productsToDisplay.map((product, key) => (
+                  <Fade in={true} timeout={1000} key={key}>
+                    <Box>
+                      <ProductCard
+                        likeProductHandler={likeProductHandler}
+                        product={product}
+                      />
+                    </Box>
+                  </Fade>
+                ))
+              )}
+            </Stack>
 
-                {products.length !== 0 && (
-                  <Stack className="total-result">
-                    <Typography>
-                      Total {total} product{total > 1 ? "s" : ""} available
-                    </Typography>
-                  </Stack>
-                )}
-              </Stack>
+            <Stack className="pagination-config">
+              {products.length !== 0 && (
+                <Stack className="pagination-box">
+                  <Pagination
+                    page={currentPage}
+                    count={Math.ceil(total / searchFilter.limit)}
+                    onChange={handlePaginationChange}
+                    shape="circular"
+                    color="primary"
+                  />
+                </Stack>
+              )}
+
+              {products.length !== 0 && (
+                <Stack className="total-result">
+                  <Typography>
+                    Total {total} product{total > 1 ? "s" : ""} available
+                  </Typography>
+                </Stack>
+              )}
             </Stack>
           </Stack>
-        </ScrollFade>
+        </Stack>
       </Stack>
-      <ScrollFade>
-        <OurBrands />
-      </ScrollFade>
+
+      <OurBrands />
     </Stack>
   );
 };

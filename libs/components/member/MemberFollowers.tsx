@@ -85,23 +85,20 @@ const MemberFollowers = (props: MemberFollowsProps) => {
   return (
     <div id="member-follows-page">
       <Stack className="main-title-box">
-        <ScrollFade>
-          <Stack className="right-box">
-            <Typography className="main-title">
-              {category === "followers" ? "Followers" : "Followings"}
-            </Typography>
-          </Stack>
-        </ScrollFade>
+        <Stack className="right-box">
+          <Typography className="main-title">
+            {category === "followers" ? "Followers" : "Followings"}
+          </Typography>
+        </Stack>
       </Stack>
 
       <Stack className="follows-list-box">
-        <ScrollFade>
-          <Stack className="listing-title-box">
-            <Typography className="title-text">Name</Typography>
-            <Typography className="title-text">Details</Typography>
-            <Typography className="title-text">Subscription</Typography>
-          </Stack>
-        </ScrollFade>
+        <Stack className="listing-title-box">
+          <Typography className="title-text">Name</Typography>
+          <Typography className="title-text">Details</Typography>
+          <Typography className="title-text">Subscription</Typography>
+        </Stack>
+
         {memberFollowers?.length === 0 && (
           <div className={"no-data"}>
             <img src="/img/icons/icoAlert.svg" alt="" />

@@ -39,62 +39,19 @@ const Home: NextPage = () => {
   };
   return (
     <Stack className="home-page" sx={{ height: "600px", marginTop: "100px" }}>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={fadeUp}
-      >
-        <Banner />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={fadeUp}
-      >
-        <Category />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={fadeUp}
-      >
-        <DiscounProductsList />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={fadeUp}
-      >
-        <NewProductsList />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={fadeUp}
-      >
-        <TrendProductsList />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={fadeUp}
-      >
-        <Advertisement />
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false }}
-        variants={fadeUp}
-      >
-        <Blogs />
-      </motion.div>
+      <Banner />
+
+      <Category />
+
+      <DiscounProductsList />
+
+      <NewProductsList />
+
+      <TrendProductsList />
+
+      <Advertisement />
+
+      <Blogs />
     </Stack>
   );
 };

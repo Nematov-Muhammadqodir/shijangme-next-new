@@ -66,36 +66,34 @@ const RecentlyVisited: NextPage = () => {
 
   return (
     <div id="my-favorites-page">
-      <ScrollFade>
-        <Stack className="main-title-box">
-          <Stack className="right-box">
-            <Typography className="main-title">Recently Visited</Typography>
-            <Typography className="sub-title">
-              We are glad to see you again!
-            </Typography>
-          </Stack>
+      <Stack className="main-title-box">
+        <Stack className="right-box">
+          <Typography className="main-title">Recently Visited</Typography>
+          <Typography className="sub-title">
+            We are glad to see you again!
+          </Typography>
         </Stack>
-      </ScrollFade>
-      <ScrollFade>
-        <Stack className="favorites-list-box">
-          {recentlyVisited?.length ? (
-            recentlyVisited?.map((product: Product) => {
-              return (
-                <MyPageFavoriteCard
-                  product={product}
-                  recentlyVisited={true}
-                  key={product._id}
-                />
-              );
-            })
-          ) : (
-            <div className={"no-data"}>
-              <img src="/img/icons/icoAlert.svg" alt="" />
-              <p>No Recently Visited Products found!</p>
-            </div>
-          )}
-        </Stack>
-      </ScrollFade>
+      </Stack>
+
+      <Stack className="favorites-list-box">
+        {recentlyVisited?.length ? (
+          recentlyVisited?.map((product: Product) => {
+            return (
+              <MyPageFavoriteCard
+                product={product}
+                recentlyVisited={true}
+                key={product._id}
+              />
+            );
+          })
+        ) : (
+          <div className={"no-data"}>
+            <img src="/img/icons/icoAlert.svg" alt="" />
+            <p>No Recently Visited Products found!</p>
+          </div>
+        )}
+      </Stack>
+
       {recentlyVisited?.length ? (
         <Stack className="pagination-config">
           <Stack className="pagination-box">

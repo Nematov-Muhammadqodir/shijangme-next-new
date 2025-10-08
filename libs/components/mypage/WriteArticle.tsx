@@ -10,19 +10,16 @@ const TuiEditor = dynamic(() => import("../community/Teditor"), { ssr: false });
 const WriteArticle: NextPage = () => {
   return (
     <div id="write-article-page">
-      <ScrollFade>
-        <Stack className="main-title-box">
-          <Stack className="right-box">
-            <Typography className="main-title">Write an Article</Typography>
-            <Typography className="sub-title">
-              Feel free to write your ideas!
-            </Typography>
-          </Stack>
+      <Stack className="main-title-box">
+        <Stack className="right-box">
+          <Typography className="main-title">Write an Article</Typography>
+          <Typography className="sub-title">
+            Feel free to write your ideas!
+          </Typography>
         </Stack>
-      </ScrollFade>
-      <ScrollFade>
-        <TuiEditor />
-      </ScrollFade>
+      </Stack>
+
+      <TuiEditor />
     </div>
   );
 };

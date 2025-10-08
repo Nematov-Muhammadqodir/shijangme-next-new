@@ -133,17 +133,15 @@ const MyPage: NextPage = () => {
       <div className="container">
         <Stack className={"my-page"}>
           <Stack className={"back-frame"}>
-            <ScrollFade>
-              <Stack
-                className={
-                  user.memberType === MemberType.VENDOR
-                    ? "left-config increase"
-                    : "left-config"
-                }
-              >
-                <MyMenu />
-              </Stack>
-            </ScrollFade>
+            <Stack
+              className={
+                user.memberType === MemberType.VENDOR
+                  ? "left-config increase"
+                  : "left-config"
+              }
+            >
+              <MyMenu />
+            </Stack>
 
             <Stack className="main-config" mb={"76px"}>
               <Stack className={"list-config"}>
