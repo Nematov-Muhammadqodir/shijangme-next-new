@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ["api.kadai.uz"], // <-- add your API hostname here
+  },
   env: {
     REACT_APP_API_URL: process.env.NEXT_PUBLIC_API_URL,
     REACT_APP_API_GRAPHQL_URL: process.env.NEXT_PUBLIC_API_GRAPHQL_URL,

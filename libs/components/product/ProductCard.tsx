@@ -11,6 +11,7 @@ import { userVar } from "../../../apollo/store";
 import { REACT_APP_API_URL } from "../../types/config";
 import { Product } from "../../types/product/product";
 import { addItem } from "../../../slices/cartSlice";
+import Image from "next/image";
 
 interface ProductCardProps {
   likeProductHandler: any;
@@ -34,7 +35,14 @@ const ProductCard = (props: ProductCardProps) => {
           }}
         >
           <Box className="image-container">
-            <img src={productImage} alt="" />
+            {/* <img src={productImage} alt="" /> */}
+            <Image
+              src={productImage}
+              alt={product?.productName || "Product Image"}
+              layout="fill" // makes the image fill the container
+              objectFit="cover" // keeps the aspect ratio and fills container
+              priority={false} // set true for above-the-fold images
+            />
             <Box
               className="like"
               onClick={(e: React.MouseEvent<HTMLDivElement>) => {
