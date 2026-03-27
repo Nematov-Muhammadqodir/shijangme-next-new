@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["api.kadai.uz"], // <-- add your API hostname here
+    domains: ["api.kadai.uz", "localhost"], // <-- add your API hostname here
   },
   env: {
     REACT_APP_API_URL: process.env.NEXT_PUBLIC_API_URL,

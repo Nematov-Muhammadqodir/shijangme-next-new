@@ -207,35 +207,13 @@ const Navbar = ({ initialValues, ...props }: any) => {
           <Box className={`logo-box ${colorChange ? "black" : ""}`}>
             <Link href={"/"}>
               <Stack className="logo-config">
-                <Stack className="logo-top">
-                  <img src="/img/logo/A.svg" alt="" className="big-a" />
-                  <img src="/img/logo/n.svg" alt="" />
-                  <img src="/img/logo/n.svg" alt="" />
-                  <img src="/img/logo/sma.svg" alt="" />
-                  <img src="/img/logo/c.svg" alt="" style={{ width: "15px" }} />
-                  <img src="/img/logo/b.svg" alt="" style={{ width: "17px" }} />
+                <Box sx={{ display: "flex", alignItems: "center" }}>
                   <img
-                    src="/img/logo/i.svg"
-                    alt=""
-                    style={{
-                      width: "7px",
-                      height: "25px",
-                      paddingTop: "10px",
-                      marginRight: "3px",
-                    }}
+                    src="/img/logo/Group 147152.png"
+                    alt="Annachi"
+                    style={{ height: "40px", width: "auto" }}
                   />
-                </Stack>
-                <Stack className="logo-bottom">
-                  <img src="/img/logo/wK.svg" alt="" className="big-a" />
-                  <img src="/img/logo/wa.svg" alt="" />
-                  <img src="/img/logo/wd.svg" alt="" />
-                  <img src="/img/logo/wa.svg" alt="" />
-                  <img
-                    src="/img/logo/wi.svg"
-                    alt=""
-                    style={{ width: "15px" }}
-                  />
-                </Stack>
+                </Box>
               </Stack>
             </Link>
           </Box>

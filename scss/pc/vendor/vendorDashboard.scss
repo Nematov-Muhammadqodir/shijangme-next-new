@@ -1,0 +1,175 @@
+#pc-wrap {
+  /* Shared vendor page styles */
+  #vendor-fridge-page,
+  #vendor-bills-page,
+  #vendor-loans-page,
+  #vendor-purchases-page,
+  #vendor-orders-page,
+  #browse-vendors-page,
+  #vendor-fridge-view-page {
+    width: 100%;
+    padding: 0 10px;
+
+    .main-title-box {
+      margin-bottom: 24px;
+
+      .right-box {
+        .main-title {
+          color: #181a20;
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 32px;
+        }
+
+        .sub-title {
+          color: #717171;
+          font-size: 14px;
+          font-weight: 400;
+          margin-top: 4px;
+        }
+      }
+    }
+
+    /* Table styles */
+    .MuiTableContainer-root {
+      border-radius: 12px;
+      overflow: hidden;
+
+      .MuiTableHead-root {
+        .MuiTableRow-root {
+          .MuiTableCell-root {
+            font-weight: 600;
+            color: #555;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+
+      .MuiTableBody-root {
+        .MuiTableRow-root {
+          &:hover {
+            background-color: #f9f9f9;
+          }
+
+          .MuiTableCell-root {
+            font-size: 14px;
+            padding: 12px 16px;
+          }
+        }
+      }
+    }
+
+    /* Chip filter styles */
+    .MuiChip-root {
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    /* Dialog styles */
+    .MuiDialog-paper {
+      border-radius: 16px;
+
+      .MuiDialogTitle-root {
+        font-weight: 700;
+        font-size: 18px;
+      }
+
+      .MuiDialogContent-root {
+        padding-top: 16px !important;
+      }
+    }
+
+    /* Tab styles */
+    .MuiTabs-root {
+      .MuiTab-root {
+        text-transform: none;
+        font-weight: 600;
+        font-size: 15px;
+
+        &.Mui-selected {
+          color: #280559;
+        }
+      }
+
+      .MuiTabs-indicator {
+        background-color: #280559;
+        height: 3px;
+        border-radius: 2px;
+      }
+    }
+
+    /* Button styles */
+    .MuiButton-contained {
+      text-transform: none;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: none;
+      padding: 8px 20px;
+
+      &:hover {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .MuiButton-outlined {
+      text-transform: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+  }
+
+  /* Browse vendors card grid */
+  #browse-vendors-page {
+    .MuiCard-root {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  /* Stock color indicators */
+  #vendor-fridge-page {
+    .stock-low {
+      color: #f44336;
+      font-weight: 700;
+    }
+
+    .stock-warning {
+      color: #ff9800;
+      font-weight: 700;
+    }
+
+    .stock-good {
+      color: #4caf50;
+      font-weight: 700;
+    }
+  }
+
+  /* Loan status badges */
+  #vendor-loans-page {
+    .loan-open {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    .loan-paid {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .loan-overdue {
+      background: #ffebee;
+      color: #c62828;
+    }
+  }
+}

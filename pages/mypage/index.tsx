@@ -30,6 +30,13 @@ import MemberFollowers from "../../libs/components/member/MemberFollowers";
 import MemberFollowings from "../../libs/components/member/MemberFollowings";
 import MyProfile from "../../libs/components/mypage/MyProfile";
 import withLayoutMain from "../../libs/components/layout/LayoutHome";
+import VendorFridge from "../../libs/components/vendor/VendorFridge";
+import VendorBills from "../../libs/components/vendor/VendorBills";
+import VendorLoans from "../../libs/components/vendor/VendorLoans";
+import VendorPurchases from "../../libs/components/vendor/VendorPurchases";
+import VendorOrders from "../../libs/components/vendor/VendorOrders";
+import BrowseVendors from "../../libs/components/vendor/BrowseVendors";
+import VendorFridgeView from "../../libs/components/vendor/VendorFridgeView";
 
 // import { useMutation, useReactiveVar } from "@apollo/client";
 // import { Stack } from "@mui/material";
@@ -147,6 +154,13 @@ const MyPage: NextPage = () => {
               <Stack className={"list-config"}>
                 {category === "addProduct" && <AddProduct />}
                 {category === "myProducts" && <MyProducts />}
+                {category === "fridge" && <VendorFridge />}
+                {category === "purchases" && <VendorPurchases />}
+                {category === "bills" && <VendorBills />}
+                {category === "loans" && <VendorLoans />}
+                {category === "browseVendors" && <BrowseVendors />}
+                {category === "vendorFridge" && <VendorFridgeView />}
+                {category === "vendorOrders" && <VendorOrders />}
                 {category === "myFavorites" && <MyFavorites />}
                 {category === "recentlyVisited" && <RecentlyVisited />}
                 {category === "myArticles" && <MyArticles />}

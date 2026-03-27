@@ -25,6 +25,12 @@ import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
+import KitchenIcon from "@mui/icons-material/Kitchen";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import ReceiptIcon from "@mui/icons-material/Receipt";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+import ListAltIcon from "@mui/icons-material/ListAlt";
 import { sweetConfirmAlert } from "../../types/sweetAlert";
 import { userVar } from "../../../apollo/store";
 import { logOut } from "../../auth";
@@ -79,7 +85,7 @@ const MyMenu = () => {
         <Stack
           className={"section"}
           style={{
-            height: user.memberType === "VENDOR" ? "318px" : "153px",
+            height: user.memberType === "VENDOR" ? "auto" : "153px",
           }}
         >
           <Typography className="title" variant={"h5"}>
@@ -133,6 +139,150 @@ const MyMenu = () => {
                         component={"p"}
                       >
                         My Products
+                      </Typography>
+                    </div>
+                  </Link>
+                </ListItem>
+                <ListItem className={pathname === "fridge" ? "focus" : ""}>
+                  <Link
+                    href={{
+                      pathname: "/mypage",
+                      query: { category: "fridge" },
+                    }}
+                    scroll={false}
+                  >
+                    <div className={"flex-box"}>
+                      {category === "fridge" ? (
+                        <KitchenIcon style={{ color: "black" }} />
+                      ) : (
+                        <KitchenIcon style={{ color: "white" }} />
+                      )}
+                      <Typography
+                        className={"sub-title"}
+                        variant={"subtitle1"}
+                        component={"p"}
+                      >
+                        Fridge
+                      </Typography>
+                    </div>
+                  </Link>
+                </ListItem>
+                <ListItem className={pathname === "purchases" ? "focus" : ""}>
+                  <Link
+                    href={{
+                      pathname: "/mypage",
+                      query: { category: "purchases" },
+                    }}
+                    scroll={false}
+                  >
+                    <div className={"flex-box"}>
+                      {category === "purchases" ? (
+                        <ShoppingCartIcon style={{ color: "black" }} />
+                      ) : (
+                        <ShoppingCartIcon style={{ color: "white" }} />
+                      )}
+                      <Typography
+                        className={"sub-title"}
+                        variant={"subtitle1"}
+                        component={"p"}
+                      >
+                        Purchases
+                      </Typography>
+                    </div>
+                  </Link>
+                </ListItem>
+                <ListItem className={pathname === "bills" ? "focus" : ""}>
+                  <Link
+                    href={{
+                      pathname: "/mypage",
+                      query: { category: "bills" },
+                    }}
+                    scroll={false}
+                  >
+                    <div className={"flex-box"}>
+                      {category === "bills" ? (
+                        <ReceiptIcon style={{ color: "black" }} />
+                      ) : (
+                        <ReceiptIcon style={{ color: "white" }} />
+                      )}
+                      <Typography
+                        className={"sub-title"}
+                        variant={"subtitle1"}
+                        component={"p"}
+                      >
+                        Bills
+                      </Typography>
+                    </div>
+                  </Link>
+                </ListItem>
+                <ListItem className={pathname === "loans" ? "focus" : ""}>
+                  <Link
+                    href={{
+                      pathname: "/mypage",
+                      query: { category: "loans" },
+                    }}
+                    scroll={false}
+                  >
+                    <div className={"flex-box"}>
+                      {category === "loans" ? (
+                        <HandshakeIcon style={{ color: "black" }} />
+                      ) : (
+                        <HandshakeIcon style={{ color: "white" }} />
+                      )}
+                      <Typography
+                        className={"sub-title"}
+                        variant={"subtitle1"}
+                        component={"p"}
+                      >
+                        Loans
+                      </Typography>
+                    </div>
+                  </Link>
+                </ListItem>
+                <ListItem className={pathname === "browseVendors" ? "focus" : ""}>
+                  <Link
+                    href={{
+                      pathname: "/mypage",
+                      query: { category: "browseVendors" },
+                    }}
+                    scroll={false}
+                  >
+                    <div className={"flex-box"}>
+                      {category === "browseVendors" ? (
+                        <StorefrontIcon style={{ color: "black" }} />
+                      ) : (
+                        <StorefrontIcon style={{ color: "white" }} />
+                      )}
+                      <Typography
+                        className={"sub-title"}
+                        variant={"subtitle1"}
+                        component={"p"}
+                      >
+                        Browse Vendors
+                      </Typography>
+                    </div>
+                  </Link>
+                </ListItem>
+                <ListItem className={pathname === "vendorOrders" ? "focus" : ""}>
+                  <Link
+                    href={{
+                      pathname: "/mypage",
+                      query: { category: "vendorOrders" },
+                    }}
+                    scroll={false}
+                  >
+                    <div className={"flex-box"}>
+                      {category === "vendorOrders" ? (
+                        <ListAltIcon style={{ color: "black" }} />
+                      ) : (
+                        <ListAltIcon style={{ color: "white" }} />
+                      )}
+                      <Typography
+                        className={"sub-title"}
+                        variant={"subtitle1"}
+                        component={"p"}
+                      >
+                        Orders
                       </Typography>
                     </div>
                   </Link>
