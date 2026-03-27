@@ -1,14 +1,12 @@
 import { useReactiveVar } from "@apollo/client";
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { userVar } from "../apollo/store";
 import Banner from "../libs/components/homePage/Banner";
 import DiscounProductsList from "../libs/components/homePage/DiscounProductsList";
-
 import NewProductsList from "../libs/components/homePage/NewProductsList";
 import TrendProductsList from "../libs/components/homePage/TrendProductsList";
 import Advertisement from "../libs/components/homePage/Advertisement";
@@ -27,18 +25,13 @@ const Home: NextPage = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("userTypeHome", user?.memberType);
-    if (user.memberType === "ADMIN") {
+    if (user?.memberType === "ADMIN") {
       router.push("/_admin/users");
     }
-  }, [user]);
+  }, [user, router]);
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 80 },
-    visible: { opacity: 10, y: 20, transition: { duration: 1.2 } },
-  };
   return (
-    <Stack className="home-page" sx={{ height: "600px", marginTop: "100px" }}>
+    <Stack className="home-page" sx={{ minHeight: "600px", marginTop: "100px" }}>
       <Banner />
 
       <Category />

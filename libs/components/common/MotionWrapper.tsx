@@ -13,13 +13,9 @@ const ScrollFade: React.FC<ScrollFadeProps> = ({
   y = 80,
   duration = 1.2,
 }) => {
-  //   const fadeUp = {
-  //     hidden: { opacity: 0, y },
-  //     visible: { opacity: 1, y: 0, transition: { duration } },
-  //   };
   const fadeUp = {
-    hidden: { opacity: 0, y: 80 },
-    visible: { opacity: 10, y: 20, transition: { duration: 1.2 } },
+    hidden: { opacity: 0, y },
+    visible: { opacity: 1, y: 0, transition: { duration } },
   };
 
   return (

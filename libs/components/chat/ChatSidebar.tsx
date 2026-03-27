@@ -9,7 +9,6 @@ const ChatSidebar = () => {
   const { getUsers, users, setSelectedUser, selectedUser } = useChatStore();
   const { onlineUsers } = useAuthStore();
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
-  console.log("users", users);
 
   useEffect(() => {
     getUsers();
@@ -58,7 +57,7 @@ const ChatSidebar = () => {
               <img
                 src={
                   user?.profilePic
-                    ? `http://72.60.41.172:4008/${user.profilePic}`
+                    ? `${process.env.NEXT_PUBLIC_API_URL}/${user.profilePic}`
                     : "/img/profile/defaultImg.jpg"
                 }
                 alt=""

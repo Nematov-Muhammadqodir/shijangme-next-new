@@ -43,7 +43,6 @@ function createIsomorphicLink() {
           ...getHeaders(),
         },
       }));
-      console.warn("requesting.. ", operation);
       return forward(operation);
     });
 
@@ -66,13 +65,13 @@ function createIsomorphicLink() {
 
     const errorLink = onError(({ graphQLErrors, networkError, response }) => {
       if (graphQLErrors) {
-        graphQLErrors.map(({ message, locations, path, extensions }) =>
-          console.log(
+        graphQLErrors.forEach(({ message, locations, path }) =>
+          console.error(
             `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
           )
         );
       }
-      if (networkError) console.log(`[Network error]: ${networkError}`);
+      if (networkError) console.error(`[Network error]: ${networkError}`);
       // @ts-ignore
       if (networkError?.statusCode === 401) {
       }

@@ -86,7 +86,7 @@ const Join = () => {
                   <div className={"input-box"}>
                     <span>Password</span>
                     <input
-                      type="text"
+                      type="password"
                       placeholder={"Enter Password"}
                       onChange={(e) => setPassword(e.target.value)}
                       required={true}

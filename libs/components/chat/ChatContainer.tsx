@@ -18,7 +18,6 @@ const ChatContainer = () => {
   const { authUser } = useAuthStore();
 
   useEffect(() => {
-    console.log("userID", selectedUser._id);
     getMessages(selectedUser._id);
     subscribeToMessages();
 
@@ -36,8 +35,6 @@ const ChatContainer = () => {
     }
   }, [messages]);
 
-  console.log("messages", messages);
-
   return (
     <div className="chat-main-container" ref={scrollableContainerRef}>
       {messages.map((message: any, i) => (
@@ -52,10 +49,10 @@ const ChatContainer = () => {
             src={
               message.senderId === authUser._id
                 ? authUser?.profilePic
-                  ? `http://72.60.41.172:4008/${authUser.profilePic}`
+                  ? `${process.env.NEXT_PUBLIC_API_URL}/${authUser.profilePic}`
                   : "/img/profile/defaultImg.jpg"
                 : selectedUser?.profilePic
-                ? `http://72.60.41.172:4008/${selectedUser.profilePic}`
+                ? `${process.env.NEXT_PUBLIC_API_URL}/${selectedUser.profilePic}`
                 : "/img/profile/defaultImg.jpg"
             }
             alt=""
@@ -66,7 +63,7 @@ const ChatContainer = () => {
               <div>
                 {message.image && (
                   <img
-                    src={`${"http://72.60.41.172:4008"}${message.image}`}
+                    src={`${"${process.env.NEXT_PUBLIC_API_URL}"}${message.image}`}
                     alt="Attachment"
                     className="attached-image"
                   />

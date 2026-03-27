@@ -4,7 +4,7 @@ import { axiosInstance } from "@/libs/axios";
 import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
-const BASE_URL = "http://72.60.41.172:4008";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
@@ -27,7 +27,6 @@ export const useAuthStore = create((set, get) => ({
       set({ authUser: res.data.user });
       get().connectSocket();
     } catch (error) {
-      console.log("Error in checkAuth:", error);
       set({ authUser: null });
       localStorage.removeItem("token");
     } finally {
@@ -90,13 +89,10 @@ export const useAuthStore = create((set, get) => ({
           : undefined,
       });
 
-      console.log("res.data uploded", res.data);
-
       set({ authUser: res.data });
       toast.success("Profile updated successfully");
     } catch (error) {
-      console.log("error in update profile:", error);
-      toast.error(error.response?.data?.message || "Something went wrong");
+      toast.error(error?.response?.data?.message || "Something went wrong");
     } finally {
       set({ isUpdatingProfile: false });
     }
